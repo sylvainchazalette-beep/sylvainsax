@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sylvain Sax — Book d'Exception &amp; Offres Mariage</title>
+  <meta name="description" content="Saxophoniste performeur pour mariage : cérémonie, cocktail, dîner et soirée dansante en duo avec le DJ. Formules 2028 clé en main, sonorisation incluse. Plus de 80 mariages, 5,0 ★ sur Google.">
+  <meta name="theme-color" content="#0F172A">
+  <meta name="format-detection" content="telephone=yes">
+  <link rel="canonical" href="https://brochure-sylvain-sax-2028.netlify.app/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F172A'/%3E%3Ctext x='32' y='45' font-size='34' text-anchor='middle' fill='%2314B8A6' font-family='Georgia,serif' font-weight='bold'%3ES%3C/text%3E%3C/svg%3E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Sylvain Sax — L'Élégance du Saxophone Live pour Votre Mariage">
+  <meta property="og:description" content="De la cérémonie à la soirée dansante, je sublime chaque moment fort de votre journée. Formules Mariage 2028.">
+  <meta property="og:image" content="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&amp;w=1200&amp;h=630&amp;fit=cover&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,800;1,400&amp;display=swap">
+
+  <!-- Preload the hero image at the size each class of device actually needs -->
+  <link rel="preload" as="image" fetchpriority="high" media="(max-width: 640px)"
+        href="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&amp;w=800&amp;q=68">
+  <link rel="preload" as="image" fetchpriority="high" media="(min-width: 641px)"
+        href="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&amp;w=1600&amp;q=72">
+
+  <style>
+    /* ============================================================
+       FLUID DESIGN TOKENS
+       Every size interpolates between a phone-safe minimum and a
+       desktop maximum, so the layout reads well at any width
+       instead of snapping between a handful of breakpoints.
+       ============================================================ */
+    :root {
+      --bg: #0F172A;
+      --surface: #1E293B;
+      --text: #E2E8F0;
+      --muted: #94A3B8;
+      --soft: #CBD5E1;
+      --faint: #64748B;
+      --accent: #14B8A6;
+      --accent-light: #2DD4BF;
+      --hairline: rgba(255, 255, 255, 0.08);
+
+      --step-h1: clamp(1.85rem, 1.15rem + 3.6vw, 3rem);
+      --step-h2: clamp(1.5rem, 1.15rem + 1.8vw, 2rem);
+      --step-h3: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      --step-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+      --step-small: clamp(0.875rem, 0.85rem + 0.15vw, 0.9375rem);
+      --step-tiny: clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem);
+
+      --gap: clamp(1rem, 0.6rem + 1.6vw, 1.875rem);
+      --section-gap: clamp(2.5rem, 1.5rem + 4vw, 3.75rem);
+      --card-pad: clamp(1.25rem, 0.9rem + 1.6vw, 2.5rem);
+      --radius: clamp(14px, 10px + 1vw, 20px);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      font-size: var(--step-body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      /* Respect notches and rounded display corners */
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a { color: var(--accent); }
+
+    :focus-visible {
+      outline: 2px solid var(--accent-light);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin-inline: auto;
+      padding: clamp(1.25rem, 0.75rem + 2.5vw, 2.5rem) clamp(1rem, 0.75rem + 1.25vw, 1.5rem);
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, .serif { font-family: 'Playfair Display', Georgia, serif; }
+    h1, h2 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      background-color: #16213c;
+      background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.55) 100%),
+                        url('/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&w=800&q=68');
+      background-position: center;
+      background-size: cover;
+      border-radius: var(--radius);
+      padding: clamp(2.5rem, 1.4rem + 5vw, 5rem) clamp(1.25rem, 0.5rem + 3.5vw, 3.125rem);
+      margin-bottom: var(--gap);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    @media (min-width: 641px) {
+      .hero {
+        background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.55) 100%),
+                          url('/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&w=1600&q=72');
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .hero {
+        background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.55) 100%),
+                          url('/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&w=2200&q=74');
+      }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(20, 184, 166, 0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent-light);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: var(--step-tiny);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: var(--step-h1);
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero > p {
+      font-size: clamp(1rem, 0.94rem + 0.4vw, 1.125rem);
+      color: var(--muted);
+      max-width: 42ch;
+      margin: 0 auto clamp(1.5rem, 1rem + 2vw, 2.1875rem) auto;
+      font-weight: 300;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(0.5rem, 0.2rem + 2vw, 3.125rem);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: clamp(1.25rem, 1rem + 1vw, 1.875rem);
+      margin-top: 1.25rem;
+    }
+
+    .stat-item { text-align: center; min-width: 0; }
+
+    .stat-val {
+      font-size: clamp(1rem, 0.7rem + 1.5vw, 1.75rem);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+      overflow-wrap: normal;
+      word-break: keep-all;
+      hyphens: none;
+    }
+
+    .stat-lbl {
+      font-size: clamp(0.6875rem, 0.65rem + 0.2vw, 0.75rem);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1.35;
+      margin-top: 2px;
+    }
+
+    /* SECTION TITLES */
+    .section-header {
+      text-align: center;
+      margin: var(--section-gap) 0 clamp(1.25rem, 1rem + 1.5vw, 2.1875rem) 0;
+    }
+
+    .section-header h2 {
+      font-size: var(--step-h2);
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: var(--step-small);
+      max-width: 52ch;
+      margin-inline: auto;
+    }
+
+    /* STORY / EXPERIENCE TIMELINE */
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap);
+      margin-bottom: var(--section-gap);
+    }
+
+    @media (min-width: 520px) { .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 960px) { .timeline { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+    .timeline-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: var(--card-pad);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(20, 184, 166, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--accent-light);
+      margin-bottom: 0.9375rem;
+    }
+
+    .timeline-time {
+      font-size: var(--step-tiny);
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-title {
+      font-size: var(--step-h3);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.3;
+      margin: 5px 0 10px 0;
+    }
+
+    .timeline-desc {
+      font-size: var(--step-small);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* REPERTOIRE SHOWCASE */
+    .repertoire-section {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+      border-radius: var(--radius);
+      padding: var(--card-pad);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin-bottom: var(--section-gap);
+    }
+
+    .repertoire-head { text-align: center; margin-bottom: 1.25rem; }
+
+    .repertoire-head h2 {
+      color: #FFFFFF;
+      font-size: clamp(1.375rem, 1.15rem + 1.1vw, 1.625rem);
+      line-height: 1.25;
+    }
+
+    .repertoire-head p {
+      color: var(--muted);
+      font-size: var(--step-small);
+      margin-top: 6px;
+    }
+
+    .genres-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap);
+      margin-top: 1.5625rem;
+    }
+
+    @media (min-width: 480px) { .genres-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1000px) { .genres-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+    .genre-box {
+      background: rgba(255, 255, 255, 0.03);
+      padding: clamp(1rem, 0.85rem + 0.8vw, 1.25rem);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .genre-box h3 {
+      color: var(--accent-light);
+      font-size: var(--step-small);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .genre-box p { font-size: var(--step-tiny); color: var(--muted); line-height: 1.55; }
+
+    /* GALERIE PHOTO */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap);
+      margin-bottom: var(--section-gap);
+    }
+
+    @media (min-width: 760px) { .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--hairline);
+      aspect-ratio: 4 / 3;
+      background: var(--surface);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      background: linear-gradient(0deg, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.75) 55%, transparent 100%);
+      padding: clamp(0.875rem, 0.75rem + 0.8vw, 1.25rem);
+      padding-top: 1.6rem;
+      color: #FFF;
+    }
+
+    .gallery-caption {
+      display: block;
+      font-size: var(--step-small);
+      font-weight: 700;
+      color: var(--accent-light);
+      line-height: 1.35;
+    }
+
+    .gallery-sub { display: block; font-size: var(--step-tiny); color: var(--soft); line-height: 1.4; }
+
+    /* FORMULES SHOWCASE */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap);
+      margin-bottom: var(--section-gap);
+    }
+
+    @media (min-width: 720px) { .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+    .pricing-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: var(--card-pad);
+      border: 1px solid var(--hairline);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pricing-card.featured {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+      border: 2px solid var(--accent);
+      box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.3);
+      margin-top: 14px;
+    }
+
+    @media (min-width: 720px) { .pricing-card.featured { margin-top: 0; } }
+
+    .popular-tag {
+      position: absolute;
+      top: -14px;
+      right: clamp(1rem, 0.5rem + 2vw, 1.875rem);
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .price-title {
+      font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+
+    .price-sub { font-size: var(--step-small); color: var(--muted); margin-top: 4px; }
+
+    .price-amount {
+      margin: clamp(1rem, 0.8rem + 1vw, 1.5625rem) 0;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 10px;
+    }
+
+    .price-num {
+      font-size: clamp(2rem, 1.6rem + 2vw, 2.625rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .price-ht { font-size: var(--step-small); color: var(--faint); white-space: nowrap; }
+
+    .price-note {
+      font-size: var(--step-tiny);
+      color: var(--muted);
+      margin-top: -0.5rem;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .price-features { list-style: none; margin-bottom: 0; }
+
+    .price-features li {
+      font-size: var(--step-small);
+      color: var(--soft);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .price-features li::before {
+      content: "\2726";
+      color: var(--accent);
+      flex-shrink: 0;
+      line-height: 1.5;
+    }
+
+    /* REASSURANCE BAR */
+    .reassurance-bar {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap);
+      background: rgba(20, 184, 166, 0.05);
+      border: 1px solid rgba(20, 184, 166, 0.2);
+      border-radius: var(--radius);
+      padding: var(--card-pad);
+      margin-bottom: var(--section-gap);
+      text-align: center;
+    }
+
+    @media (min-width: 400px) { .reassurance-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 780px) { .reassurance-bar { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+    .reassurance-icon { font-size: 20px; line-height: 1; }
+    .reassurance-item h3 { font-size: var(--step-small); color: #FFFFFF; margin-top: 8px; line-height: 1.35; }
+    .reassurance-item p { font-size: var(--step-tiny); color: var(--muted); margin-top: 4px; line-height: 1.45; }
+    .reassurance-item .ref { font-size: 0.6875rem; color: var(--faint); }
+
+    /* SECTION AVIS */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap);
+      margin-bottom: var(--section-gap);
+    }
+
+    @media (min-width: 640px) { .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 940px) { .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    .review-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: var(--card-pad);
+      border: 1px solid var(--hairline);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .review-stars {
+      color: var(--accent);
+      font-size: var(--step-small);
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .review-quote {
+      font-size: var(--step-small);
+      color: var(--soft);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 0.9375rem;
+    }
+
+    .author-name { font-size: var(--step-small); font-weight: 700; color: #FFFFFF; }
+
+    .review-badge {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      background: rgba(20, 184, 166, 0.1);
+      border: 1px solid rgba(20, 184, 166, 0.2);
+      padding: 3px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    /* BOOKING STEPS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--gap);
+      margin-bottom: var(--section-gap);
+    }
+
+    @media (min-width: 780px) { .steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+    .step-card {
+      background: var(--surface);
+      padding: clamp(1.125rem, 1rem + 1vw, 1.5625rem) clamp(1rem, 0.9rem + 0.8vw, 1.25rem);
+      border-radius: var(--radius);
+      border-top: 4px solid var(--accent);
+      text-align: center;
+    }
+
+    .step-number { font-size: var(--step-tiny); font-weight: 800; color: var(--accent); letter-spacing: 0.06em; }
+    .step-card h3 { font-size: var(--step-h3); color: #FFFFFF; margin: 8px 0; line-height: 1.3; }
+    .step-card p { font-size: var(--step-tiny); color: var(--muted); line-height: 1.5; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding-top: 1.875rem;
+      border-top: 1px solid var(--hairline);
+      color: var(--faint);
+      font-size: var(--step-small);
+    }
+
+    .footer-name {
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+      color: #FFF;
+      font-weight: 700;
+      margin-bottom: 0.625rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px clamp(0.5rem, 0.25rem + 1.5vw, 1.25rem);
+      margin-bottom: 1rem;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: rgba(20, 184, 166, 0.1);
+      border: 1px solid rgba(20, 184, 166, 0.25);
+      color: var(--accent-light);
+      font-weight: 700;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 4px 12px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 8px 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .social-sep { color: var(--faint); }
+
+    @media (hover: hover) and (pointer: fine) {
+      .timeline-card:hover { transform: translateY(-5px); }
+      .gallery-item:hover img { transform: scale(1.05); }
+      .contact-links a:hover { background: rgba(20, 184, 166, 0.18); border-color: var(--accent); }
+      .social-links a:hover { text-decoration: underline; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .social-sep { display: none; }
+      .social-links { flex-direction: column; gap: 0; }
+    }
+
+    @media print {
+      body { background: #FFF; color: #000; font-size: 11pt; }
+      .container { max-width: none; padding: 0; }
+      .hero { background: none !important; border: 1px solid #CCC; box-shadow: none; padding: 20pt; }
+      .hero h1, .section-header h2, .price-title, .timeline-title,
+      .step-card h3, .repertoire-head h2, .footer-name { color: #000; }
+      .hero > p, .section-header p, .timeline-desc, .genre-box p,
+      .step-card p, .price-sub, .price-note, .review-quote, .reassurance-item p { color: #333; }
+      .timeline-card, .pricing-card, .review-card, .step-card,
+      .repertoire-section, .genre-box, .reassurance-bar {
+        background: none !important;
+        border: 1px solid #DDD;
+        box-shadow: none;
+        break-inside: avoid;
+      }
+      .gallery-grid { break-inside: avoid; }
+      .section-header { break-after: avoid; }
+      .contact-links a { background: none; border: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HERO / IMMERSION -->
+    <header class="hero">
+      <span class="hero-badge">Saison Mariages 2027-2028</span>
+      <h1>L'Élégance du Saxophone Live pour Votre Mariage</h1>
+      <p>De la magie d'une cérémonie jusqu'à l'énergie de la soirée dansante, je sublime chaque moment fort de votre journée 🎷✨</p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-val">5.0 ★</div>
+          <div class="stat-lbl">Avis Google Vérifiés</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">100%</div>
+          <div class="stat-lbl">Sur-Mesure</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">Autonome</div>
+          <div class="stat-lbl">Sonorisation Pro</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- TIMELINE DE EXPÉRIENCE -->
+      <section aria-labelledby="titre-immersion">
+        <div class="section-header">
+          <h2 id="titre-immersion">Une Immersion Musicale à Chaque Moment Fort</h2>
+          <p>Chaque étape de votre journée possède sa propre couleur rythmique</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="timeline-icon" aria-hidden="true">💒</div>
+            <div class="timeline-time">Cérémonie</div>
+            <h3 class="timeline-title">Émotion Pure</h3>
+            <p class="timeline-desc">J'accompagne tous les moments forts de votre cérémonie laïque ou religieuse de l'entrée des invités à la sortie des mariés. Les différents moments d'interventions (échange des alliances, signature des registres…) sont choisis par les mariés.</p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-icon" aria-hidden="true">🍸</div>
+            <div class="timeline-time">Cocktail</div>
+            <h3 class="timeline-title">Chic &amp; Festif</h3>
+            <p class="timeline-desc">J'adapte mon répertoire multi générationnel en fonction de l'ambiance que vous souhaitez pour votre cocktail/vin d'honneur (ambiance chill, festive, mélange des deux). Ma playlist et le rythme des musiques sont adaptés en temps réel. Vous pouvez me demander d'inclure jusqu'à 5 titres "coup de cœur". Je peux jouer en duo avec votre DJ sur tout ou une partie du cocktail s'il est présent.</p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-icon" aria-hidden="true">✨</div>
+            <div class="timeline-time">Dîner</div>
+            <h3 class="timeline-title">Temps Forts</h3>
+            <p class="timeline-desc">J'interviens pour votre entrée en salle pour donner le ton à votre soirée, à l'arrivée du gâteau et l'ouverture de bal.</p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-icon" aria-hidden="true">🔥</div>
+            <div class="timeline-time">Soirée Dansante</div>
+            <h3 class="timeline-title">Duo Sax &amp; DJ</h3>
+            <p class="timeline-desc">J'interviens au milieu de la piste pour faire monter l'énergie au maximum en collaboration avec votre DJ.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- REPERTOIRE -->
+      <section class="repertoire-section" aria-labelledby="titre-univers">
+        <div class="repertoire-head">
+          <h2 id="titre-univers">Univers &amp; Styles Musicaux</h2>
+          <p>Un répertoire moderne pensé pour faire vibrer toutes les générations</p>
+        </div>
+
+        <div class="genres-grid">
+          <div class="genre-box">
+            <h3>Deep House &amp; Electro</h3>
+            <p>Klingande, Kungs, Bakermat, Robin Schulz, Kygo, Dua Lipa...</p>
+          </div>
+          <div class="genre-box">
+            <h3>Pop &amp; Chart-Toppers</h3>
+            <p>Coldplay, Ed Sheeran, Sabrina Carpenter, Elton John, Daft Punk...</p>
+          </div>
+          <div class="genre-box">
+            <h3>Funk, Disco &amp; Soul</h3>
+            <p>Earth Wind &amp; Fire, ABBA, Bruno Mars, Stevie Wonder, Michael Jackson...</p>
+          </div>
+          <div class="genre-box">
+            <h3>Romantique &amp; Cérémonie</h3>
+            <p>John Legend, Yiruma, reprises acoustiques et versions instrumentales épurées...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIE PHOTO -->
+      <section aria-labelledby="titre-images">
+        <div class="section-header">
+          <h2 id="titre-images">Aperçu en Images</h2>
+          <p>L'ambiance, l'élégance et la complicité en prestations live</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="/.netlify/images?url=/pm-2270.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72"
+                 srcset="/.netlify/images?url=/pm-2270.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;q=72 400w,
+                         /.netlify/images?url=/pm-2270.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72 640w,
+                         /.netlify/images?url=/pm-2270.jpg&amp;w=900&amp;h=675&amp;fit=cover&amp;q=72 900w,
+                         /.netlify/images?url=/pm-2270.jpg&amp;w=1280&amp;h=960&amp;fit=cover&amp;q=70 1280w"
+                 sizes="(min-width: 1140px) 340px, (min-width: 760px) 31vw, 92vw"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="Sylvain Sax au saxophone pendant un cocktail de mariage en extérieur">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-caption">Cocktail &amp; Vin d'Honneur</span>
+              <span class="gallery-sub">Ambiance chic &amp; lounge en extérieur</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="/.netlify/images?url=/10.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72"
+                 srcset="/.netlify/images?url=/10.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;q=72 400w,
+                         /.netlify/images?url=/10.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72 640w,
+                         /.netlify/images?url=/10.jpg&amp;w=960&amp;h=720&amp;fit=cover&amp;q=72 960w"
+                 sizes="(min-width: 1140px) 340px, (min-width: 760px) 31vw, 92vw"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="Performance en duo saxophone et DJ sur la piste de danse">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-caption">Duo Sax &amp; DJ</span>
+              <span class="gallery-sub">Énergie maximum sur la piste de danse</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;position=top&amp;q=72"
+                 srcset="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;position=top&amp;q=72 400w,
+                         /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;position=top&amp;q=72 640w,
+                         /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=900&amp;h=675&amp;fit=cover&amp;position=top&amp;q=72 900w,
+                         /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=1280&amp;h=960&amp;fit=cover&amp;position=top&amp;q=70 1280w"
+                 sizes="(min-width: 1140px) 340px, (min-width: 760px) 31vw, 92vw"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="Saxophoniste accompagnant une cérémonie de mariage">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-caption">Cérémonie Laïque &amp; Religieuse</span>
+              <span class="gallery-sub">Émotion et moments forts sur-mesure</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- FORMULES -->
+      <section aria-labelledby="titre-formules">
+        <div class="section-header">
+          <h2 id="titre-formules">Les Formules Mariage 2028</h2>
+          <p>Des prestations clé en main avec engagement d'excellence</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div>
+              <h3 class="price-title">Formule Cocktail</h3>
+              <div class="price-sub">Animation élégante du Vin d'Honneur</div>
+              <div class="price-amount">
+                <span class="price-num">840 €*</span>
+                <span class="price-ht">TTC (700 € HT)</span>
+              </div>
+              <p class="price-note">* Hors frais de déplacement</p>
+              <ul class="price-features">
+                <li>Performance Saxophone Live durant le cocktail</li>
+                <li>Possibilité de jouer en duo avec le DJ</li>
+                <li>Programmation musicale sur-mesure</li>
+                <li>Jusqu'à 5 demandes spécifiques incluses</li>
+                <li>Matériel de sonorisation inclus</li>
+                <li>Mise à disposition d'un micro pour les discours &amp; annonces durant le cocktail</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pricing-card featured">
+            <span class="popular-tag">Expérience Totale</span>
+            <div>
+              <h3 class="price-title">Journée Complète</h3>
+              <div class="price-sub">De la Cérémonie jusqu'à 01h du matin</div>
+              <div class="price-amount">
+                <span class="price-num">1 680 €</span>
+                <span class="price-ht">TTC (1 400 € HT)</span>
+              </div>
+              <ul class="price-features">
+                <li>Réunion de préparation personnalisée en Visio</li>
+                <li>Cérémonie : Morceaux clés personnalisés sur-mesure</li>
+                <li>Cocktail : Animation complète (solo ou duo avec le DJ) + 5 morceaux "coup de cœur"</li>
+                <li>Mise à disposition d'un micro pour les discours &amp; annonces durant le cocktail</li>
+                <li>Dîner &amp; Soirée : Entrée en salle, gâteau, ouverture de bal &amp; duo avec le DJ (jusqu'à 01h max)</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SÉRÉNITÉ / ASSURANCE / TECH -->
+      <section class="reassurance-bar" aria-label="Garanties et matériel">
+        <div class="reassurance-item">
+          <div class="reassurance-icon" aria-hidden="true">🔊</div>
+          <h3>Sonorisation Adaptée</h3>
+          <p>Matériel de sonorisation adapté à chaque moment clé de la journée</p>
+        </div>
+        <div class="reassurance-item">
+          <div class="reassurance-icon" aria-hidden="true">🤝</div>
+          <h3>Synergie avec le DJ</h3>
+          <p>Coordination technique et musicale avec le DJ.</p>
+        </div>
+        <div class="reassurance-item">
+          <div class="reassurance-icon" aria-hidden="true">🛡️</div>
+          <h3>Assurance RC PRO</h3>
+          <p>Protection du lieu &amp; des invités<br><span class="ref">Orus – N°RCPH278508955</span></p>
+        </div>
+        <div class="reassurance-item">
+          <div class="reassurance-icon" aria-hidden="true">⭐</div>
+          <h3>Satisfaction 5/5</h3>
+          <p>Plus de 80 mariages célébrés &amp; 20 ans de pratique</p>
+        </div>
+      </section>
+
+      <!-- AVIS & TÉMOIGNAGES -->
+      <section aria-labelledby="titre-avis">
+        <div class="section-header">
+          <h2 id="titre-avis">Témoignages &amp; Retour d'Expérience</h2>
+          <p>Ce que les mariés et leurs convives ont pensé du show</p>
+        </div>
+
+        <div class="reviews-grid">
+          <blockquote class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <p class="review-quote">« Nous avons fait appel à Sylvain pour l’animation de notre cocktail. Nous savions que ce serait un beau moment, mais nous étions loin d'imaginer à quel point ! C'était tout simplement incroyable. Sylvain a su mettre tout le monde d'accord et créer une ambiance exceptionnelle du début à la fin. Son talent, son énergie et sa proximité avec les invités ont transformé notre mariage en un véritable moment de partage et de fête. Tout le monde a adoré, et nos invités nous en parlent encore aujourd'hui ! »</p>
+            </div>
+            <footer class="review-author">
+              <span class="author-name">Marie &amp; Florian</span>
+              <span class="review-badge">Cocktail</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <p class="review-quote">« Par où commencer quand l’animation a été parfaite du début à la fin ? Nous avons fait confiance à Sylvain pour accompagner notre mariage en trois étapes importantes : la cérémonie religieuse, le vin d’honneur et le début de soirée dansante (jusqu’à 1h30 du matin !). S’il y a bien une chose que nos invités ne sont pas prêts d’oublier, c’est la présence de Sylvain ! L’ambiance est LE souvenir qu’ils retiennent de notre mariage. »</p>
+            </div>
+            <footer class="review-author">
+              <span class="author-name">Marion Hvt</span>
+              <span class="review-badge">Journée Complète</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <p class="review-quote">« J’ai découvert Sylvain par hasard avec une publicité Facebook, et il a été un des points les plus forts de notre mariage. Un homme talentueux et sympathique. Nous avons fait notre entrée des mariés à ses côtés, et il a fait danser nos 120 personnes pendant 20 min autour de lui ! Un véritable show combiné à une ambiance de folie ! Merci du fond du coeur Sylvain. Nos invités n’oublieront pas de sitôt ton talent. »</p>
+            </div>
+            <footer class="review-author">
+              <span class="author-name">Laëna Plumelet</span>
+              <span class="review-badge">Cocktail</span>
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- COMMENT RÉSERVER -->
+      <section aria-labelledby="titre-reserver">
+        <div class="section-header">
+          <h2 id="titre-reserver">Comment Réserver ?</h2>
+          <p>Un accompagnement simple et structuré étape par étape</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01. CONTACT</div>
+            <h3>Premier Échange</h3>
+            <p>Par téléphone, Instagram ou e-mail pour vérifier la disponibilité de votre date.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02. CONTRAT</div>
+            <h3>Réservation</h3>
+            <p>Signature d'un contrat de réservation clair protégeant chaque partie.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03. PRÉPARATIFS</div>
+            <h3>Sur-Mesure</h3>
+            <p>Choix des morceaux clés et calage de l'emploi du temps (au plus tôt c'est le mieux !).</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04. LE JOUR J</div>
+            <h3>Profitez !</h3>
+            <p>Gestion logistique 100% gérée. Il ne vous reste plus qu'à vivre l'instant présent.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER & CONTACT -->
+    <footer>
+      <p class="footer-name">Sylvain Sax — Saxophoniste Performeur</p>
+
+      <div class="contact-links">
+        <a href="tel:+33628933995" aria-label="Appeler le 06 28 93 39 95">
+          <span aria-hidden="true">📞</span><span>06 28 93 39 95</span>
+        </a>
+        <a href="mailto:sylvainchazalette@gmail.com" aria-label="Envoyer un e-mail à sylvainchazalette@gmail.com">
+          <span aria-hidden="true">✉️</span><span>sylvainchazalette@gmail.com</span>
+        </a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/sylvain_sax/" target="_blank" rel="noopener">Instagram : @sylvain_sax</a>
+        <span class="social-sep" aria-hidden="true">•</span>
+        <a href="https://share.google/Izy8KLIvbz9t36eET" target="_blank" rel="noopener">Consulter les Avis Google (5.0 ★)</a>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
