@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -625,10 +625,478 @@
 
     .social-sep { color: var(--faint); }
 
+    /* ============================================================
+       DYNAMIC INTERACTIONS & MICRO-ANIMATIONS
+       ============================================================ */
+    /* Reading scroll progress indicator */
+    .scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 50%, #38bdf8 100%);
+      box-shadow: 0 0 10px rgba(45, 212, 191, 0.7);
+      z-index: 1000;
+      pointer-events: none;
+      transition: width 0.08s ease-out;
+    }
+
+    /* Ambient Hero Glow & Animation */
+    .hero {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 25%, rgba(20, 184, 166, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      animation: hero-ambient 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes hero-ambient {
+      0% { opacity: 0.45; transform: scale(0.96); }
+      100% { opacity: 0.85; transform: scale(1.04); }
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero Soundwave Equalizer in Badge */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      box-shadow: 0 0 15px -3px rgba(20, 184, 166, 0.25);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px rgba(45, 212, 191, 0.45);
+      border-color: var(--accent-light);
+    }
+
+    .eq-wave {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2.5px;
+      height: 12px;
+      vertical-align: middle;
+    }
+
+    .eq-wave span {
+      display: block;
+      width: 2.5px;
+      background: var(--accent-light);
+      border-radius: 2px;
+      animation: eq-bounce 1.2s ease-in-out infinite alternate;
+    }
+
+    .eq-wave span:nth-child(1) { height: 35%; animation-delay: 0.05s; }
+    .eq-wave span:nth-child(2) { height: 95%; animation-delay: 0.35s; }
+    .eq-wave span:nth-child(3) { height: 60%; animation-delay: 0.15s; }
+    .eq-wave span:nth-child(4) { height: 100%; animation-delay: 0.45s; }
+
+    @keyframes eq-bounce {
+      0% { transform: scaleY(0.3); }
+      50% { transform: scaleY(1); }
+      100% { transform: scaleY(0.35); }
+    }
+
+    /* Scroll Reveal System */
+    .js .reveal-init {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .js .reveal-init.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger transitions for child elements */
+    .stagger-1 { transition-delay: 0.06s; }
+    .stagger-2 { transition-delay: 0.14s; }
+    .stagger-3 { transition-delay: 0.22s; }
+    .stagger-4 { transition-delay: 0.30s; }
+
+    /* Interactive Spotlight & Hover Physics on Cards */
+    .timeline-card,
+    .genre-box,
+    .pricing-card,
+    .review-card,
+    .step-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.35s ease,
+                  box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  background 0.35s ease;
+    }
+
+    .timeline-card > *,
+    .genre-box > *,
+    .pricing-card > *,
+    .review-card > *,
+    .step-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-card::before,
+    .genre-box::before,
+    .pricing-card::before,
+    .review-card::before,
+    .step-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(350px circle at var(--mouse-x, -200px) var(--mouse-y, -200px), rgba(45, 212, 191, 0.09), transparent 70%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+
+    /* Timeline Icon dynamics */
+    .timeline-icon {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    /* Genre Card Header & Mini Equalizer */
+    .genre-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .genre-header h3 {
+      margin-bottom: 0 !important;
+    }
+
+    .mini-eq {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 10px;
+      opacity: 0.55;
+      transition: opacity 0.3s ease;
+    }
+
+    .mini-eq span {
+      display: block;
+      width: 2px;
+      background: var(--accent-light);
+      border-radius: 1px;
+      animation: mini-pulse 1.4s ease-in-out infinite alternate;
+    }
+
+    .mini-eq span:nth-child(1) { height: 40%; animation-delay: 0.1s; }
+    .mini-eq span:nth-child(2) { height: 85%; animation-delay: 0.3s; }
+    .mini-eq span:nth-child(3) { height: 60%; animation-delay: 0.2s; }
+
+    @keyframes mini-pulse {
+      0% { transform: scaleY(0.4); }
+      100% { transform: scaleY(1); }
+    }
+
+    /* Featured Pricing Card Polish & Shimmer */
+    .popular-tag {
+      animation: pulse-badge 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse-badge {
+      0% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4); }
+      100% { box-shadow: 0 0 14px 2px rgba(45, 212, 191, 0.5); }
+    }
+
+    /* Reassurance Item Micro-interaction */
+    .reassurance-item {
+      transition: transform 0.3s ease;
+    }
+
+    .reassurance-icon {
+      display: inline-block;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Review Card Watermark Accent */
+    .review-card::after {
+      content: '“';
+      position: absolute;
+      top: 6px;
+      right: 18px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.08;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Step Card Dynamics */
+    .step-number {
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* Interactive Gallery Items & Lightbox */
+    .gallery-item {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .gallery-zoom-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 2vw, 2.5rem);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .lightbox.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 960px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lightbox.is-open .lightbox-content {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent);
+      border-color: var(--accent-light);
+      transform: scale(1.08);
+    }
+
+    .lightbox-figure {
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      background: #0B1120;
+    }
+
+    .lightbox-caption {
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .lightbox-title {
+      display: block;
+      font-size: var(--step-body);
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+
+    .lightbox-sub {
+      display: block;
+      font-size: var(--step-small);
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: clamp(1rem, 0.5rem + 2vw, 2rem);
+      right: clamp(1rem, 0.5rem + 2vw, 2rem);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      color: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      z-index: 900;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px) scale(0.9);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-to-top.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .back-to-top:hover {
+      background: var(--surface);
+      border-color: var(--accent);
+      color: #FFFFFF;
+      transform: translateY(-3px) scale(1.06);
+      box-shadow: 0 14px 28px -5px rgba(20, 184, 166, 0.35);
+    }
+
+    .back-to-top svg {
+      transition: transform 0.25s ease;
+    }
+
+    .back-to-top:hover svg {
+      transform: translateY(-2px);
+    }
+
+    /* Contact Links Hover Polish */
+    .contact-links a {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
     @media (hover: hover) and (pointer: fine) {
-      .timeline-card:hover { transform: translateY(-5px); }
+      .timeline-card:hover::before,
+      .genre-box:hover::before,
+      .pricing-card:hover::before,
+      .review-card:hover::before,
+      .step-card:hover::before {
+        opacity: 1;
+      }
+
+      .timeline-card:hover,
+      .genre-box:hover,
+      .pricing-card:hover,
+      .review-card:hover,
+      .step-card:hover {
+        border-color: rgba(45, 212, 191, 0.35);
+        box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(20, 184, 166, 0.2);
+      }
+
+      .timeline-card:hover { transform: translateY(-6px); }
+      .genre-box:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .genre-box:hover .mini-eq span { animation-duration: 0.65s; }
+      .pricing-card:hover { transform: translateY(-6px); }
+      .step-card:hover {
+        transform: translateY(-5px);
+        border-top-color: var(--accent-light);
+      }
+      .step-card:hover .step-number {
+        transform: scale(1.06);
+        color: var(--accent-light);
+      }
+      .review-card:hover { transform: translateY(-4px); }
+      .review-card:hover::after {
+        opacity: 0.18;
+        transform: translateY(-2px);
+      }
+      .reassurance-item:hover { transform: translateY(-3px); }
+      .reassurance-item:hover .reassurance-icon { transform: scale(1.2) translateY(-2px); }
       .gallery-item:hover img { transform: scale(1.05); }
-      .contact-links a:hover { background: rgba(20, 184, 166, 0.18); border-color: var(--accent); }
+      .gallery-item:hover .gallery-zoom-badge {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .gallery-item:hover .gallery-overlay {
+        background: linear-gradient(0deg, rgba(15, 23, 42, 0.98) 0%, rgba(15, 23, 42, 0.82) 65%, transparent 100%);
+      }
+      .contact-links a:hover {
+        background: rgba(20, 184, 166, 0.18);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px -6px rgba(20, 184, 166, 0.4);
+      }
       .social-links a:hover { text-decoration: underline; }
     }
 
@@ -639,6 +1107,19 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
+      .js .reveal-init {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .hero::before {
+        animation: none !important;
+      }
+      .eq-wave span,
+      .mini-eq span,
+      .popular-tag {
+        animation: none !important;
+      }
     }
 
     @media (max-width: 420px) {
@@ -647,6 +1128,8 @@
     }
 
     @media print {
+      .scroll-progress-bar, .back-to-top, .lightbox, .gallery-zoom-badge, .eq-wave, .mini-eq { display: none !important; }
+      .js .reveal-init { opacity: 1 !important; transform: none !important; }
       body { background: #FFF; color: #000; font-size: 11pt; }
       .container { max-width: none; padding: 0; }
       .hero { background: none !important; border: 1px solid #CCC; box-shadow: none; padding: 20pt; }
@@ -669,11 +1152,18 @@
 </head>
 <body>
 
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
   <div class="container">
 
     <!-- HERO / IMMERSION -->
-    <header class="hero">
-      <span class="hero-badge">Saison Mariages 2027-2028</span>
+    <header class="hero reveal-init">
+      <span class="hero-badge">
+        <span class="eq-wave" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        Saison Mariages 2027-2028
+      </span>
       <h1>L'Élégance du Saxophone Live pour Votre Mariage</h1>
       <p>De la magie d'une cérémonie jusqu'à l'énergie de la soirée dansante, je sublime chaque moment fort de votre journée 🎷✨</p>
 
@@ -696,35 +1186,35 @@
     <main>
 
       <!-- TIMELINE DE EXPÉRIENCE -->
-      <section aria-labelledby="titre-immersion">
+      <section aria-labelledby="titre-immersion" class="reveal-init">
         <div class="section-header">
           <h2 id="titre-immersion">Une Immersion Musicale à Chaque Moment Fort</h2>
           <p>Chaque étape de votre journée possède sa propre couleur rythmique</p>
         </div>
 
         <div class="timeline">
-          <article class="timeline-card">
+          <article class="timeline-card stagger-1">
             <div class="timeline-icon" aria-hidden="true">💒</div>
             <div class="timeline-time">Cérémonie</div>
             <h3 class="timeline-title">Émotion Pure</h3>
             <p class="timeline-desc">J'accompagne tous les moments forts de votre cérémonie laïque ou religieuse de l'entrée des invités à la sortie des mariés. Les différents moments d'interventions (échange des alliances, signature des registres…) sont choisis par les mariés.</p>
           </article>
 
-          <article class="timeline-card">
+          <article class="timeline-card stagger-2">
             <div class="timeline-icon" aria-hidden="true">🍸</div>
             <div class="timeline-time">Cocktail</div>
             <h3 class="timeline-title">Chic &amp; Festif</h3>
             <p class="timeline-desc">J'adapte mon répertoire multi générationnel en fonction de l'ambiance que vous souhaitez pour votre cocktail/vin d'honneur (ambiance chill, festive, mélange des deux). Ma playlist et le rythme des musiques sont adaptés en temps réel. Vous pouvez me demander d'inclure jusqu'à 5 titres "coup de cœur". Je peux jouer en duo avec votre DJ sur tout ou une partie du cocktail s'il est présent.</p>
           </article>
 
-          <article class="timeline-card">
+          <article class="timeline-card stagger-3">
             <div class="timeline-icon" aria-hidden="true">✨</div>
             <div class="timeline-time">Dîner</div>
             <h3 class="timeline-title">Temps Forts</h3>
             <p class="timeline-desc">J'interviens pour votre entrée en salle pour donner le ton à votre soirée, à l'arrivée du gâteau et l'ouverture de bal.</p>
           </article>
 
-          <article class="timeline-card">
+          <article class="timeline-card stagger-4">
             <div class="timeline-icon" aria-hidden="true">🔥</div>
             <div class="timeline-time">Soirée Dansante</div>
             <h3 class="timeline-title">Duo Sax &amp; DJ</h3>
@@ -734,42 +1224,58 @@
       </section>
 
       <!-- REPERTOIRE -->
-      <section class="repertoire-section" aria-labelledby="titre-univers">
+      <section class="repertoire-section reveal-init" aria-labelledby="titre-univers">
         <div class="repertoire-head">
           <h2 id="titre-univers">Univers &amp; Styles Musicaux</h2>
           <p>Un répertoire moderne pensé pour faire vibrer toutes les générations</p>
         </div>
 
         <div class="genres-grid">
-          <div class="genre-box">
-            <h3>Deep House &amp; Electro</h3>
+          <div class="genre-box stagger-1">
+            <div class="genre-header">
+              <h3>Deep House &amp; Electro</h3>
+              <span class="mini-eq" aria-hidden="true"><span></span><span></span><span></span></span>
+            </div>
             <p>Klingande, Kungs, Bakermat, Robin Schulz, Kygo, Dua Lipa...</p>
           </div>
-          <div class="genre-box">
-            <h3>Pop &amp; Chart-Toppers</h3>
+          <div class="genre-box stagger-2">
+            <div class="genre-header">
+              <h3>Pop &amp; Chart-Toppers</h3>
+              <span class="mini-eq" aria-hidden="true"><span></span><span></span><span></span></span>
+            </div>
             <p>Coldplay, Ed Sheeran, Sabrina Carpenter, Elton John, Daft Punk...</p>
           </div>
-          <div class="genre-box">
-            <h3>Funk, Disco &amp; Soul</h3>
+          <div class="genre-box stagger-3">
+            <div class="genre-header">
+              <h3>Funk, Disco &amp; Soul</h3>
+              <span class="mini-eq" aria-hidden="true"><span></span><span></span><span></span></span>
+            </div>
             <p>Earth Wind &amp; Fire, ABBA, Bruno Mars, Stevie Wonder, Michael Jackson...</p>
           </div>
-          <div class="genre-box">
-            <h3>Romantique &amp; Cérémonie</h3>
+          <div class="genre-box stagger-4">
+            <div class="genre-header">
+              <h3>Romantique &amp; Cérémonie</h3>
+              <span class="mini-eq" aria-hidden="true"><span></span><span></span><span></span></span>
+            </div>
             <p>John Legend, Yiruma, reprises acoustiques et versions instrumentales épurées...</p>
           </div>
         </div>
       </section>
 
       <!-- GALERIE PHOTO -->
-      <section aria-labelledby="titre-images">
+      <section aria-labelledby="titre-images" class="reveal-init">
         <div class="section-header">
           <h2 id="titre-images">Aperçu en Images</h2>
           <p>L'ambiance, l'élégance et la complicité en prestations live</p>
         </div>
 
         <div class="gallery-grid">
-          <figure class="gallery-item">
+          <figure class="gallery-item stagger-1" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Cocktail &amp; Vin d'Honneur">
+            <div class="gallery-zoom-badge" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
             <img src="/.netlify/images?url=/pm-2270.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72"
+                 data-full-src="/.netlify/images?url=/pm-2270.jpg&amp;w=1400&amp;q=85"
                  srcset="/.netlify/images?url=/pm-2270.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;q=72 400w,
                          /.netlify/images?url=/pm-2270.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72 640w,
                          /.netlify/images?url=/pm-2270.jpg&amp;w=900&amp;h=675&amp;fit=cover&amp;q=72 900w,
@@ -783,8 +1289,12 @@
             </figcaption>
           </figure>
 
-          <figure class="gallery-item">
+          <figure class="gallery-item stagger-2" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Duo Sax &amp; DJ">
+            <div class="gallery-zoom-badge" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
             <img src="/.netlify/images?url=/10.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72"
+                 data-full-src="/.netlify/images?url=/10.jpg&amp;w=1400&amp;q=85"
                  srcset="/.netlify/images?url=/10.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;q=72 400w,
                          /.netlify/images?url=/10.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72 640w,
                          /.netlify/images?url=/10.jpg&amp;w=960&amp;h=720&amp;fit=cover&amp;q=72 960w"
@@ -797,8 +1307,12 @@
             </figcaption>
           </figure>
 
-          <figure class="gallery-item">
+          <figure class="gallery-item stagger-3" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Cérémonie Laïque &amp; Religieuse">
+            <div class="gallery-zoom-badge" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
             <img src="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;position=top&amp;q=72"
+                 data-full-src="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=1400&amp;q=85"
                  srcset="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;position=top&amp;q=72 400w,
                          /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;position=top&amp;q=72 640w,
                          /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=900&amp;h=675&amp;fit=cover&amp;position=top&amp;q=72 900w,
@@ -815,14 +1329,14 @@
       </section>
 
       <!-- FORMULES -->
-      <section aria-labelledby="titre-formules">
+      <section aria-labelledby="titre-formules" class="reveal-init">
         <div class="section-header">
           <h2 id="titre-formules">Les Formules Mariage 2028</h2>
           <p>Des prestations clé en main avec engagement d'excellence</p>
         </div>
 
         <div class="pricing-grid">
-          <article class="pricing-card">
+          <article class="pricing-card stagger-1">
             <div>
               <h3 class="price-title">Formule Cocktail</h3>
               <div class="price-sub">Animation élégante du Vin d'Honneur</div>
@@ -842,7 +1356,7 @@
             </div>
           </article>
 
-          <article class="pricing-card featured">
+          <article class="pricing-card featured stagger-2">
             <span class="popular-tag">Expérience Totale</span>
             <div>
               <h3 class="price-title">Journée Complète</h3>
@@ -865,23 +1379,23 @@
       </section>
 
       <!-- SÉRÉNITÉ / ASSURANCE / TECH -->
-      <section class="reassurance-bar" aria-label="Garanties et matériel">
-        <div class="reassurance-item">
+      <section class="reassurance-bar reveal-init" aria-label="Garanties et matériel">
+        <div class="reassurance-item stagger-1">
           <div class="reassurance-icon" aria-hidden="true">🔊</div>
           <h3>Sonorisation Adaptée</h3>
           <p>Matériel de sonorisation adapté à chaque moment clé de la journée</p>
         </div>
-        <div class="reassurance-item">
+        <div class="reassurance-item stagger-2">
           <div class="reassurance-icon" aria-hidden="true">🤝</div>
           <h3>Synergie avec le DJ</h3>
           <p>Coordination technique et musicale avec le DJ.</p>
         </div>
-        <div class="reassurance-item">
+        <div class="reassurance-item stagger-3">
           <div class="reassurance-icon" aria-hidden="true">🛡️</div>
           <h3>Assurance RC PRO</h3>
           <p>Protection du lieu &amp; des invités<br><span class="ref">Orus – N°RCPH278508955</span></p>
         </div>
-        <div class="reassurance-item">
+        <div class="reassurance-item stagger-4">
           <div class="reassurance-icon" aria-hidden="true">⭐</div>
           <h3>Satisfaction 5/5</h3>
           <p>Plus de 80 mariages célébrés &amp; 20 ans de pratique</p>
@@ -889,14 +1403,14 @@
       </section>
 
       <!-- AVIS & TÉMOIGNAGES -->
-      <section aria-labelledby="titre-avis">
+      <section aria-labelledby="titre-avis" class="reveal-init">
         <div class="section-header">
           <h2 id="titre-avis">Témoignages &amp; Retour d'Expérience</h2>
           <p>Ce que les mariés et leurs convives ont pensé du show</p>
         </div>
 
         <div class="reviews-grid">
-          <blockquote class="review-card">
+          <blockquote class="review-card stagger-1">
             <div>
               <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
               <p class="review-quote">« Nous avons fait appel à Sylvain pour l’animation de notre cocktail. Nous savions que ce serait un beau moment, mais nous étions loin d'imaginer à quel point ! C'était tout simplement incroyable. Sylvain a su mettre tout le monde d'accord et créer une ambiance exceptionnelle du début à la fin. Son talent, son énergie et sa proximité avec les invités ont transformé notre mariage en un véritable moment de partage et de fête. Tout le monde a adoré, et nos invités nous en parlent encore aujourd'hui ! »</p>
@@ -907,7 +1421,7 @@
             </footer>
           </blockquote>
 
-          <blockquote class="review-card">
+          <blockquote class="review-card stagger-2">
             <div>
               <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
               <p class="review-quote">« Par où commencer quand l’animation a été parfaite du début à la fin ? Nous avons fait confiance à Sylvain pour accompagner notre mariage en trois étapes importantes : la cérémonie religieuse, le vin d’honneur et le début de soirée dansante (jusqu’à 1h30 du matin !). S’il y a bien une chose que nos invités ne sont pas prêts d’oublier, c’est la présence de Sylvain ! L’ambiance est LE souvenir qu’ils retiennent de notre mariage. »</p>
@@ -918,7 +1432,7 @@
             </footer>
           </blockquote>
 
-          <blockquote class="review-card">
+          <blockquote class="review-card stagger-3">
             <div>
               <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
               <p class="review-quote">« J’ai découvert Sylvain par hasard avec une publicité Facebook, et il a été un des points les plus forts de notre mariage. Un homme talentueux et sympathique. Nous avons fait notre entrée des mariés à ses côtés, et il a fait danser nos 120 personnes pendant 20 min autour de lui ! Un véritable show combiné à une ambiance de folie ! Merci du fond du coeur Sylvain. Nos invités n’oublieront pas de sitôt ton talent. »</p>
@@ -932,32 +1446,32 @@
       </section>
 
       <!-- COMMENT RÉSERVER -->
-      <section aria-labelledby="titre-reserver">
+      <section aria-labelledby="titre-reserver" class="reveal-init">
         <div class="section-header">
           <h2 id="titre-reserver">Comment Réserver ?</h2>
           <p>Un accompagnement simple et structuré étape par étape</p>
         </div>
 
         <div class="steps-grid">
-          <div class="step-card">
+          <div class="step-card stagger-1">
             <div class="step-number">01. CONTACT</div>
             <h3>Premier Échange</h3>
             <p>Par téléphone, Instagram ou e-mail pour vérifier la disponibilité de votre date.</p>
           </div>
 
-          <div class="step-card">
+          <div class="step-card stagger-2">
             <div class="step-number">02. CONTRAT</div>
             <h3>Réservation</h3>
             <p>Signature d'un contrat de réservation clair protégeant chaque partie.</p>
           </div>
 
-          <div class="step-card">
+          <div class="step-card stagger-3">
             <div class="step-number">03. PRÉPARATIFS</div>
             <h3>Sur-Mesure</h3>
             <p>Choix des morceaux clés et calage de l'emploi du temps (au plus tôt c'est le mieux !).</p>
           </div>
 
-          <div class="step-card">
+          <div class="step-card stagger-4">
             <div class="step-number">04. LE JOUR J</div>
             <h3>Profitez !</h3>
             <p>Gestion logistique 100% gérée. Il ne vous reste plus qu'à vivre l'instant présent.</p>
@@ -989,5 +1503,176 @@
 
   </div>
 
+  <!-- LIGHTBOX MODAL -->
+  <aside class="lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer la vue agrandie">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <figure class="lightbox-figure">
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+        <figcaption class="lightbox-caption">
+          <span class="lightbox-title" id="lightboxTitle"></span>
+          <span class="lightbox-sub" id="lightboxSub"></span>
+        </figcaption>
+      </figure>
+    </div>
+  </aside>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Remonter en haut de la page">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // 1. Reading Progress Bar & Back to top button visibility
+      var progressBar = document.getElementById('scrollProgressBar');
+      var backToTopBtn = document.getElementById('backToTop');
+      var ticking = false;
+
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+            var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+            if (progressBar) {
+              progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+            }
+
+            if (backToTopBtn) {
+              if (scrollTop > 450) {
+                backToTopBtn.classList.add('is-visible');
+              } else {
+                backToTopBtn.classList.remove('is-visible');
+              }
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 2. Intersection Observer for Scroll Reveals
+      if ('IntersectionObserver' in window) {
+        var revealElements = document.querySelectorAll('.reveal-init');
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        var fallbackReveals = document.querySelectorAll('.reveal-init');
+        fallbackReveals.forEach(function (el) {
+          el.classList.add('is-revealed');
+        });
+      }
+
+      // 3. Subtle Interactive Card Spotlight (Pointer tracking)
+      var spotlightCards = document.querySelectorAll('.timeline-card, .genre-box, .pricing-card, .review-card, .step-card');
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        spotlightCards.forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', x + 'px');
+            card.style.setProperty('--mouse-y', y + 'px');
+          });
+        });
+      }
+
+      // 4. Accessible Photo Gallery Lightbox
+      var lightbox = document.getElementById('imageLightbox');
+      var lightboxImg = document.getElementById('lightboxImg');
+      var lightboxTitle = document.getElementById('lightboxTitle');
+      var lightboxSub = document.getElementById('lightboxSub');
+      var lightboxClose = document.getElementById('lightboxClose');
+      var lightboxBackdrop = document.getElementById('lightboxBackdrop');
+      var galleryItems = document.querySelectorAll('.gallery-item');
+      var lastFocusedElement = null;
+
+      function openLightbox(item) {
+        var img = item.querySelector('img');
+        var title = item.querySelector('.gallery-caption');
+        var sub = item.querySelector('.gallery-sub');
+        if (!img || !lightbox || !lightboxImg) return;
+
+        lastFocusedElement = document.activeElement;
+        var fullSrc = img.getAttribute('data-full-src') || img.src;
+        lightboxImg.src = fullSrc;
+        lightboxImg.alt = img.alt || '';
+        if (lightboxTitle) lightboxTitle.textContent = title ? title.textContent : '';
+        if (lightboxSub) lightboxSub.textContent = sub ? sub.textContent : '';
+
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        if (lightboxClose) {
+          lightboxClose.focus();
+        }
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lightboxImg) lightboxImg.src = '';
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+        }
+      }
+
+      galleryItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          openLightbox(item);
+        });
+        item.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(item);
+          }
+        });
+      });
+
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+      window.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
