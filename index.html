@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sylvain Sax — Brochure de présentation &amp; Offres Mariage</title>
-  <meta name="description" content="Saxophoniste performeur pour mariage : cérémonie, cocktail, dîner et soirée dansante en duo avec le DJ. Formules 2028 clé en main, sonorisation incluse. Plus de 80 mariages, 5,0 ★ sur Google.">
+  <title>Sylvain Sax — Saxophoniste pour mariage · Formules 2027-2028</title>
+  <meta name="description" content="Saxophoniste performeur pour mariage : cérémonie, cocktail, dîner et soirée dansante en duo avec le DJ. Formules 2027-2028 clés en main, sonorisation incluse. Plus de 80 mariages, 20 ans de pratique, note de 5,0 sur Google.">
   <meta name="theme-color" content="#0F172A">
   <meta name="format-detection" content="telephone=yes">
   <link rel="canonical" href="https://brochure-sylvain-sax-2028.netlify.app/">
@@ -12,14 +12,17 @@
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
-  <meta property="og:title" content="Sylvain Sax — L'Élégance du Saxophone Live pour Votre Mariage">
-  <meta property="og:description" content="De la cérémonie à la soirée dansante, je sublime chaque moment fort de votre journée. Formules Mariage 2027-2028.">
-  <meta property="og:image" content="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&amp;w=1200&amp;h=630&amp;fit=cover&amp;q=80">
+  <meta property="og:title" content="Sylvain Sax — L'élégance du saxophone live pour votre mariage">
+  <meta property="og:description" content="De la cérémonie à la soirée dansante, je sublime chaque moment fort de votre journée. Formules mariage 2027-2028.">
+  <meta property="og:url" content="https://brochure-sylvain-sax-2028.netlify.app/">
+  <meta property="og:image" content="https://brochure-sylvain-sax-2028.netlify.app/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&amp;w=1200&amp;h=630&amp;fit=cover&amp;q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,800;1,400&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap">
 
   <!-- Preload the hero image at the size each class of device actually needs -->
   <link rel="preload" as="image" fetchpriority="high" media="(max-width: 640px)"
@@ -44,18 +47,26 @@
       --accent: #14B8A6;
       --accent-light: #2DD4BF;
       --hairline: rgba(255, 255, 255, 0.08);
+      --hairline-strong: rgba(255, 255, 255, 0.14);
 
-      --step-h1: clamp(1.85rem, 1.15rem + 3.6vw, 3rem);
-      --step-h2: clamp(1.5rem, 1.15rem + 1.8vw, 2rem);
-      --step-h3: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+      --step-h1: clamp(2.25rem, 1.3rem + 4.4vw, 3.875rem);
+      --step-h2: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+      --step-h3: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
       --step-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
       --step-small: clamp(0.875rem, 0.85rem + 0.15vw, 0.9375rem);
-      --step-tiny: clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem);
+      --step-tiny: clamp(0.8125rem, 0.8rem + 0.08vw, 0.875rem);
+      --step-eyebrow: 0.6875rem;
 
-      --gap: clamp(1rem, 0.6rem + 1.6vw, 1.875rem);
-      --section-gap: clamp(2.5rem, 1.5rem + 4vw, 3.75rem);
-      --card-pad: clamp(1.25rem, 0.9rem + 1.6vw, 2.5rem);
-      --radius: clamp(14px, 10px + 1vw, 20px);
+      --tracking-eyebrow: 0.2em;
+
+      --gap: clamp(1.25rem, 0.8rem + 1.8vw, 2.25rem);
+      --section-gap: clamp(5rem, 3rem + 8vw, 9rem);
+      --card-pad: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);
+      --radius: 4px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -67,12 +78,14 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      font-family: var(--sans);
       background-color: var(--bg);
       color: var(--text);
       font-size: var(--step-body);
-      line-height: 1.65;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
       overflow-x: hidden;
       /* Respect notches and rounded display corners */
       padding-left: env(safe-area-inset-left);
@@ -83,244 +96,255 @@
 
     a { color: var(--accent); }
 
+    ul, ol { list-style: none; }
+
     :focus-visible {
-      outline: 2px solid var(--accent-light);
-      outline-offset: 3px;
-      border-radius: 4px;
+      outline: 1px solid var(--accent-light);
+      outline-offset: 4px;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1160px;
       margin-inline: auto;
-      padding: clamp(1.25rem, 0.75rem + 2.5vw, 2.5rem) clamp(1rem, 0.75rem + 1.25vw, 1.5rem);
+      padding: clamp(1rem, 0.5rem + 2vw, 2.5rem) clamp(1.25rem, 0.75rem + 2.5vw, 2.5rem) clamp(3rem, 2rem + 4vw, 5rem);
     }
 
     /* TYPOGRAPHY */
-    h1, h2, h3, .serif { font-family: 'Playfair Display', Georgia, serif; }
-    h1, h2 { text-wrap: balance; }
+    h1, h2, h3, .serif { font-family: var(--serif); font-weight: 600; }
+    h1, h2 { text-wrap: balance; letter-spacing: -0.01em; }
     p { text-wrap: pretty; }
+
+    .hero-badge,
+    .timeline-time,
+    .step-number,
+    .stat-lbl,
+    .popular-tag,
+    .review-badge,
+    .genre-box h3,
+    .reassurance-item h3 {
+      font-family: var(--sans);
+      font-size: var(--step-eyebrow);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-eyebrow);
+      line-height: 1.5;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0.875rem 2rem;
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      line-height: 1.3;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-ghost { background: transparent; color: var(--soft); border-color: var(--hairline-strong); }
 
     /* HERO SECTION */
     .hero {
       position: relative;
       background-color: #16213c;
-      background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.55) 100%),
+      background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.8) 100%),
                         url('/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&w=800&q=68');
       background-position: center;
       background-size: cover;
       border-radius: var(--radius);
-      padding: clamp(2.5rem, 1.4rem + 5vw, 5rem) clamp(1.25rem, 0.5rem + 3.5vw, 3.125rem);
-      margin-bottom: var(--gap);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      padding: clamp(4.5rem, 2.5rem + 8vw, 9rem) clamp(1.5rem, 0.75rem + 4vw, 4rem) clamp(2.5rem, 1.75rem + 3vw, 4rem);
+      border: 1px solid var(--hairline);
       text-align: center;
       overflow: hidden;
     }
 
     @media (min-width: 641px) {
       .hero {
-        background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.55) 100%),
+        background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.8) 100%),
                           url('/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&w=1600&q=72');
       }
     }
 
     @media (min-width: 1200px) {
       .hero {
-        background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.55) 100%),
+        background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.8) 100%),
                           url('/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&w=2200&q=74');
       }
     }
 
     .hero-badge {
-      display: inline-block;
-      background: rgba(20, 184, 166, 0.15);
-      border: 1px solid var(--accent);
       color: var(--accent-light);
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-size: var(--step-tiny);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      margin-bottom: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
     }
 
     .hero h1 {
       font-size: var(--step-h1);
-      font-weight: 800;
       color: #FFFFFF;
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      line-height: 1.1;
+      max-width: 17ch;
+      margin: 0 auto clamp(1.25rem, 1rem + 1vw, 1.75rem);
     }
 
-    .hero > p {
-      font-size: clamp(1rem, 0.94rem + 0.4vw, 1.125rem);
-      color: var(--muted);
-      max-width: 42ch;
-      margin: 0 auto clamp(1.5rem, 1rem + 2vw, 2.1875rem) auto;
+    .hero-lead {
+      font-size: clamp(1.0625rem, 0.98rem + 0.45vw, 1.25rem);
+      color: var(--soft);
+      line-height: 1.65;
+      max-width: 40ch;
+      margin: 0 auto clamp(2rem, 1.5rem + 2vw, 3rem);
       font-weight: 300;
     }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.875rem;
+      margin-bottom: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+    }
+
+    .hero-actions .btn-ghost { color: #FFFFFF; border-color: rgba(255, 255, 255, 0.35); }
 
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(0.5rem, 0.2rem + 2vw, 3.125rem);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: clamp(1.25rem, 1rem + 1vw, 1.875rem);
-      margin-top: 1.25rem;
+      max-width: 720px;
+      margin-inline: auto;
+      border-top: 1px solid var(--hairline-strong);
+      padding-top: clamp(1.5rem, 1.1rem + 1.5vw, 2.25rem);
     }
 
-    .stat-item { text-align: center; min-width: 0; }
+    .stat-item {
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+      min-width: 0;
+      padding-inline: 0.5rem;
+    }
+
+    .stat-item + .stat-item { border-left: 1px solid var(--hairline); }
 
     .stat-val {
-      font-size: clamp(1rem, 0.7rem + 1.5vw, 1.75rem);
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1.2;
-      overflow-wrap: normal;
-      word-break: keep-all;
-      hyphens: none;
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.375rem);
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.1;
+      font-variant-numeric: lining-nums;
+      white-space: nowrap;
     }
 
     .stat-lbl {
-      font-size: clamp(0.6875rem, 0.65rem + 0.2vw, 0.75rem);
       color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      line-height: 1.35;
-      margin-top: 2px;
+      letter-spacing: 0.14em;
+      margin-top: 0.625rem;
     }
 
     /* SECTION TITLES */
     .section-header {
       text-align: center;
-      margin: var(--section-gap) 0 clamp(1.25rem, 1rem + 1.5vw, 2.1875rem) 0;
+      margin: var(--section-gap) 0 clamp(2.5rem, 1.75rem + 3vw, 4.5rem) 0;
     }
 
     .section-header h2 {
       font-size: var(--step-h2);
       color: #FFFFFF;
-      line-height: 1.25;
-      margin-bottom: 0.5rem;
+      line-height: 1.15;
+    }
+
+    /* Thin rule under each section title */
+    .section-header h2::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 1px;
+      margin: clamp(1.25rem, 1rem + 0.6vw, 1.625rem) auto;
+      background: var(--accent);
     }
 
     .section-header p {
       color: var(--muted);
-      font-size: var(--step-small);
-      max-width: 52ch;
+      font-size: var(--step-body);
+      font-weight: 300;
+      line-height: 1.6;
+      max-width: 48ch;
       margin-inline: auto;
     }
+
 
     /* STORY / EXPERIENCE TIMELINE */
     .timeline {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--gap);
-      margin-bottom: var(--section-gap);
     }
 
-    @media (min-width: 520px) { .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (min-width: 960px) { .timeline { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (min-width: 560px) { .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1000px) { .timeline { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
     .timeline-card {
       background: var(--surface);
       border-radius: var(--radius);
       padding: var(--card-pad);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s ease;
+      border: 1px solid var(--hairline);
     }
 
-    .timeline-icon {
-      width: 42px;
-      height: 42px;
-      background: rgba(20, 184, 166, 0.1);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: var(--accent-light);
-      margin-bottom: 0.9375rem;
-    }
-
-    .timeline-time {
-      font-size: var(--step-tiny);
-      font-weight: 700;
+    .timeline-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.75rem;
+      line-height: 1;
       color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      margin-bottom: clamp(1.5rem, 1.2rem + 1vw, 2rem);
     }
+
+    .timeline-time { color: var(--accent); }
 
     .timeline-title {
       font-size: var(--step-h3);
-      font-weight: 700;
       color: #FFFFFF;
-      line-height: 1.3;
-      margin: 5px 0 10px 0;
+      line-height: 1.25;
+      margin: 0.5rem 0 1rem 0;
     }
 
     .timeline-desc {
       font-size: var(--step-small);
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.75;
     }
 
     /* REPERTOIRE SHOWCASE */
-    .repertoire-section {
-      background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
-      border-radius: var(--radius);
-      padding: var(--card-pad);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      margin-bottom: var(--section-gap);
-    }
-
-    .repertoire-head { text-align: center; margin-bottom: 1.25rem; }
-
-    .repertoire-head h2 {
-      color: #FFFFFF;
-      font-size: clamp(1.375rem, 1.15rem + 1.1vw, 1.625rem);
-      line-height: 1.25;
-    }
-
-    .repertoire-head p {
-      color: var(--muted);
-      font-size: var(--step-small);
-      margin-top: 6px;
-    }
-
     .genres-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--gap);
-      margin-top: 1.5625rem;
+      border-top: 1px solid var(--hairline);
     }
 
-    @media (min-width: 480px) { .genres-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 560px) { .genres-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (min-width: 1000px) { .genres-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
     .genre-box {
-      background: rgba(255, 255, 255, 0.03);
-      padding: clamp(1rem, 0.85rem + 0.8vw, 1.25rem);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: clamp(1.5rem, 1.2rem + 1vw, 2.25rem) clamp(0.25rem, 0rem + 1vw, 1.5rem);
+      border-bottom: 1px solid var(--hairline);
     }
 
-    .genre-box h3 {
-      color: var(--accent-light);
-      font-size: var(--step-small);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
-    }
+    .genre-box h3 { color: var(--accent-light); margin-bottom: 0.75rem; }
 
-    .genre-box p { font-size: var(--step-tiny); color: var(--muted); line-height: 1.55; }
+    .genre-box p { font-size: var(--step-small); color: var(--muted); line-height: 1.7; }
 
     /* GALERIE PHOTO */
     .gallery-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--gap);
-      margin-bottom: var(--section-gap);
     }
 
     @media (min-width: 760px) { .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -332,164 +356,169 @@
       border: 1px solid var(--hairline);
       aspect-ratio: 4 / 3;
       background: var(--surface);
+      cursor: pointer;
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.8s var(--ease);
     }
 
     .gallery-overlay {
       position: absolute;
       inset: auto 0 0 0;
-      background: linear-gradient(0deg, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.75) 55%, transparent 100%);
-      padding: clamp(0.875rem, 0.75rem + 0.8vw, 1.25rem);
-      padding-top: 1.6rem;
+      background: linear-gradient(0deg, rgba(15, 23, 42, 0.94) 0%, rgba(15, 23, 42, 0.7) 55%, transparent 100%);
+      padding: 2.75rem clamp(1.25rem, 1rem + 1vw, 1.75rem) clamp(1.125rem, 0.9rem + 1vw, 1.5rem);
       color: #FFF;
     }
 
     .gallery-caption {
       display: block;
-      font-size: var(--step-small);
-      font-weight: 700;
-      color: var(--accent-light);
+      font-family: var(--serif);
+      font-size: var(--step-body);
+      font-weight: 600;
+      color: #FFFFFF;
       line-height: 1.35;
     }
 
-    .gallery-sub { display: block; font-size: var(--step-tiny); color: var(--soft); line-height: 1.4; }
+    .gallery-sub { display: block; font-size: var(--step-tiny); color: var(--soft); line-height: 1.5; margin-top: 0.25rem; }
+
+    .gallery-zoom-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
 
     /* FORMULES SHOWCASE */
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--gap);
-      margin-bottom: var(--section-gap);
     }
 
-    @media (min-width: 720px) { .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 760px) { .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
     .pricing-card {
       background: var(--surface);
       border-radius: var(--radius);
-      padding: var(--card-pad);
+      padding: clamp(2rem, 1.25rem + 3vw, 3.5rem);
       border: 1px solid var(--hairline);
       position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .pricing-card.featured {
       background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
-      border: 2px solid var(--accent);
-      box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.3);
-      margin-top: 14px;
+      border-color: var(--accent);
     }
-
-    @media (min-width: 720px) { .pricing-card.featured { margin-top: 0; } }
 
     .popular-tag {
       position: absolute;
-      top: -14px;
-      right: clamp(1rem, 0.5rem + 2vw, 1.875rem);
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: var(--accent);
       color: var(--bg);
-      font-size: 0.6875rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 4px 14px;
-      border-radius: 20px;
+      padding: 0.375rem 1rem;
+      border-radius: 2px;
       white-space: nowrap;
     }
 
     .price-title {
-      font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-      font-weight: 800;
+      font-size: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
       color: #FFFFFF;
-      line-height: 1.25;
+      line-height: 1.2;
     }
 
-    .price-sub { font-size: var(--step-small); color: var(--muted); margin-top: 4px; }
+    .price-sub { font-size: var(--step-small); color: var(--muted); margin-top: 0.5rem; line-height: 1.55; }
 
     .price-amount {
-      margin: clamp(1rem, 0.8rem + 1vw, 1.5625rem) 0;
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 4px 10px;
+      gap: 0.25rem 0.875rem;
+      margin: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem) 0 0.5rem;
     }
 
     .price-num {
-      font-size: clamp(2rem, 1.6rem + 2vw, 2.625rem);
-      font-weight: 800;
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 1.9rem + 2.6vw, 3.5rem);
+      font-weight: 600;
       color: #FFFFFF;
-      line-height: 1.1;
+      line-height: 1;
+      font-variant-numeric: lining-nums;
       white-space: nowrap;
     }
 
-    .price-ht { font-size: var(--step-small); color: var(--faint); white-space: nowrap; }
+    .price-ht { font-size: var(--step-small); color: var(--muted); white-space: nowrap; }
 
     .price-note {
       font-size: var(--step-tiny);
-      color: var(--muted);
-      margin-top: -0.5rem;
-      margin-bottom: 1.25rem;
-      font-style: italic;
+      color: var(--faint);
+      padding-bottom: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+      margin-bottom: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+      border-bottom: 1px solid var(--hairline);
     }
-
-    .price-features { list-style: none; margin-bottom: 0; }
 
     .price-features li {
+      position: relative;
       font-size: var(--step-small);
       color: var(--soft);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      line-height: 1.5;
+      line-height: 1.65;
+      padding-left: 1.5rem;
     }
+
+    .price-features li + li { margin-top: 0.875rem; }
 
     .price-features li::before {
-      content: "\2726";
-      color: var(--accent);
-      flex-shrink: 0;
-      line-height: 1.5;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.8em;
+      width: 10px;
+      height: 1px;
+      background: var(--accent);
     }
 
-    /* REASSURANCE BAR */
+    /* REASSURANCE BAR — editorial, no frame */
     .reassurance-bar {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--gap);
-      background: rgba(20, 184, 166, 0.05);
-      border: 1px solid rgba(20, 184, 166, 0.2);
-      border-radius: var(--radius);
-      padding: var(--card-pad);
-      margin-bottom: var(--section-gap);
-      text-align: center;
+      gap: clamp(1.75rem, 1.25rem + 2vw, 2.5rem) var(--gap);
+      margin-top: var(--section-gap);
+      padding-block: clamp(2rem, 1.5rem + 2vw, 3rem);
+      border-block: 1px solid var(--hairline);
     }
 
-    @media (min-width: 400px) { .reassurance-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (min-width: 780px) { .reassurance-bar { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (min-width: 560px) { .reassurance-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1000px) { .reassurance-bar { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
-    .reassurance-icon { font-size: 20px; line-height: 1; }
-    .reassurance-item h3 { font-size: var(--step-small); color: #FFFFFF; margin-top: 8px; line-height: 1.35; }
-    .reassurance-item p { font-size: var(--step-tiny); color: var(--muted); margin-top: 4px; line-height: 1.45; }
-    .reassurance-item .ref { font-size: 0.6875rem; color: var(--faint); }
+    .reassurance-item h3 { color: var(--accent-light); }
+    .reassurance-item p { font-size: var(--step-small); color: var(--muted); margin-top: 0.5rem; line-height: 1.65; }
 
     /* SECTION AVIS */
     .reviews-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--gap);
-      margin-bottom: var(--section-gap);
     }
 
-    @media (min-width: 640px) { .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (min-width: 940px) { .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (min-width: 680px) { .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1000px) { .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
     .review-card {
       background: var(--surface);
@@ -499,22 +528,22 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
     }
 
     .review-stars {
       color: var(--accent);
-      font-size: var(--step-small);
-      margin-bottom: 12px;
-      letter-spacing: 2px;
+      font-size: 0.75rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.3em;
     }
 
     .review-quote {
-      font-size: var(--step-small);
-      color: var(--soft);
-      line-height: 1.7;
+      font-family: var(--serif);
       font-style: italic;
-      margin-bottom: 1.25rem;
+      font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+      color: var(--soft);
+      line-height: 1.8;
+      margin-bottom: clamp(1.75rem, 1.4rem + 1vw, 2.25rem);
     }
 
     .review-author {
@@ -522,363 +551,116 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 8px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 0.9375rem;
+      gap: 0.5rem 1rem;
+      border-top: 1px solid var(--hairline);
+      padding-top: 1.25rem;
     }
 
-    .author-name { font-size: var(--step-small); font-weight: 700; color: #FFFFFF; }
+    .author-name { font-size: var(--step-small); font-weight: 600; color: #FFFFFF; }
 
-    .review-badge {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      color: var(--accent-light);
-      background: rgba(20, 184, 166, 0.1);
-      border: 1px solid rgba(20, 184, 166, 0.2);
-      padding: 3px 10px;
-      border-radius: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
+    .review-badge { color: var(--accent-light); letter-spacing: 0.14em; white-space: nowrap; }
 
     /* BOOKING STEPS */
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: var(--gap);
-      margin-bottom: var(--section-gap);
     }
 
-    @media (min-width: 780px) { .steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (min-width: 560px) { .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1000px) { .steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
     .step-card {
-      background: var(--surface);
-      padding: clamp(1.125rem, 1rem + 1vw, 1.5625rem) clamp(1rem, 0.9rem + 0.8vw, 1.25rem);
-      border-radius: var(--radius);
-      border-top: 4px solid var(--accent);
-      text-align: center;
+      padding-top: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+      border-top: 1px solid var(--accent);
     }
 
-    .step-number { font-size: var(--step-tiny); font-weight: 800; color: var(--accent); letter-spacing: 0.06em; }
-    .step-card h3 { font-size: var(--step-h3); color: #FFFFFF; margin: 8px 0; line-height: 1.3; }
-    .step-card p { font-size: var(--step-tiny); color: var(--muted); line-height: 1.5; }
+    .step-number { color: var(--accent); }
+    .step-card h3 { font-size: var(--step-h3); color: #FFFFFF; margin: 0.75rem 0 0.75rem; line-height: 1.25; }
+    .step-card p { font-size: var(--step-small); color: var(--muted); line-height: 1.7; }
 
     /* FOOTER */
-    footer {
+    .site-footer {
       text-align: center;
-      padding-top: 1.875rem;
+      margin-top: var(--section-gap);
+      padding-top: clamp(3rem, 2rem + 4vw, 5rem);
       border-top: 1px solid var(--hairline);
       color: var(--faint);
       font-size: var(--step-small);
     }
 
     .footer-name {
-      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.25rem);
+      font-weight: 600;
       color: #FFF;
-      font-weight: 700;
-      margin-bottom: 0.625rem;
+      line-height: 1.15;
+    }
+
+    .footer-role {
+      font-size: var(--step-eyebrow);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-eyebrow);
+      color: var(--muted);
+      margin: 0.75rem 0 clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
     }
 
     .contact-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      gap: 8px clamp(0.5rem, 0.25rem + 1.5vw, 1.25rem);
-      margin-bottom: 1rem;
+      gap: 0.875rem;
+      margin-bottom: 1.75rem;
     }
 
-    .contact-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 44px;
-      padding: 8px 16px;
-      border-radius: 50px;
-      background: rgba(20, 184, 166, 0.1);
-      border: 1px solid rgba(20, 184, 166, 0.25);
-      color: var(--accent-light);
-      font-weight: 700;
-      text-decoration: none;
-      overflow-wrap: anywhere;
-      transition: background 0.2s ease, border-color 0.2s ease;
-    }
+    /* E-mail addresses read badly in uppercase */
+    .btn-email { text-transform: none; letter-spacing: 0.04em; font-size: 0.875rem; overflow-wrap: anywhere; }
 
     .social-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 4px 12px;
+      gap: 0 1rem;
     }
 
     .social-links a {
       display: inline-flex;
       align-items: center;
       min-height: 44px;
-      padding: 8px 4px;
-      color: var(--accent);
+      color: var(--muted);
       text-decoration: none;
-      font-weight: 600;
+      font-size: var(--step-tiny);
+      letter-spacing: 0.04em;
+      transition: color 0.3s ease;
     }
 
     .social-sep { color: var(--faint); }
 
     /* ============================================================
-       DYNAMIC INTERACTIONS & MICRO-ANIMATIONS
+       MOTION — restrained: soft reveals, 2px hovers, no loops
        ============================================================ */
-    /* Reading scroll progress indicator */
-    .scroll-progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 0%;
-      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 50%, #38bdf8 100%);
-      box-shadow: 0 0 10px rgba(45, 212, 191, 0.7);
-      z-index: 1000;
-      pointer-events: none;
-      transition: width 0.08s ease-out;
-    }
-
-    /* Ambient Hero Glow & Animation */
-    .hero {
-      position: relative;
-      isolation: isolate;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 25%, rgba(20, 184, 166, 0.2) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-      animation: hero-ambient 8s ease-in-out infinite alternate;
-    }
-
-    @keyframes hero-ambient {
-      0% { opacity: 0.45; transform: scale(0.96); }
-      100% { opacity: 0.85; transform: scale(1.04); }
-    }
-
-    .hero > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Hero Soundwave Equalizer in Badge */
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      box-shadow: 0 0 15px -3px rgba(20, 184, 166, 0.25);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .hero-badge:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 20px rgba(45, 212, 191, 0.45);
-      border-color: var(--accent-light);
-    }
-
-    .eq-wave {
-      display: inline-flex;
-      align-items: flex-end;
-      gap: 2.5px;
-      height: 12px;
-      vertical-align: middle;
-    }
-
-    .eq-wave span {
-      display: block;
-      width: 2.5px;
-      background: var(--accent-light);
-      border-radius: 2px;
-      animation: eq-bounce 1.2s ease-in-out infinite alternate;
-    }
-
-    .eq-wave span:nth-child(1) { height: 35%; animation-delay: 0.05s; }
-    .eq-wave span:nth-child(2) { height: 95%; animation-delay: 0.35s; }
-    .eq-wave span:nth-child(3) { height: 60%; animation-delay: 0.15s; }
-    .eq-wave span:nth-child(4) { height: 100%; animation-delay: 0.45s; }
-
-    @keyframes eq-bounce {
-      0% { transform: scaleY(0.3); }
-      50% { transform: scaleY(1); }
-      100% { transform: scaleY(0.35); }
-    }
-
-    /* Scroll Reveal System */
     .js .reveal-init {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
+      transform: translateY(12px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
     }
 
     .js .reveal-init.is-revealed {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
 
-    /* Stagger transitions for child elements */
-    .stagger-1 { transition-delay: 0.06s; }
-    .stagger-2 { transition-delay: 0.14s; }
-    .stagger-3 { transition-delay: 0.22s; }
-    .stagger-4 { transition-delay: 0.30s; }
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.12s; }
+    .stagger-3 { transition-delay: 0.19s; }
+    .stagger-4 { transition-delay: 0.26s; }
 
-    /* Interactive Spotlight & Hover Physics on Cards */
     .timeline-card,
-    .genre-box,
     .pricing-card,
-    .review-card,
-    .step-card {
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.35s ease,
-                  box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  background 0.35s ease;
-    }
-
-    .timeline-card > *,
-    .genre-box > *,
-    .pricing-card > *,
-    .review-card > *,
-    .step-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .timeline-card::before,
-    .genre-box::before,
-    .pricing-card::before,
-    .review-card::before,
-    .step-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(350px circle at var(--mouse-x, -200px) var(--mouse-y, -200px), rgba(45, 212, 191, 0.09), transparent 70%);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: 0;
-    }
-
-    /* Timeline Icon dynamics */
-    .timeline-icon {
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    /* Genre Card Header & Mini Equalizer */
-    .genre-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .genre-header h3 {
-      margin-bottom: 0 !important;
-    }
-
-    .mini-eq {
-      display: inline-flex;
-      align-items: flex-end;
-      gap: 2px;
-      height: 10px;
-      opacity: 0.55;
-      transition: opacity 0.3s ease;
-    }
-
-    .mini-eq span {
-      display: block;
-      width: 2px;
-      background: var(--accent-light);
-      border-radius: 1px;
-      animation: mini-pulse 1.4s ease-in-out infinite alternate;
-    }
-
-    .mini-eq span:nth-child(1) { height: 40%; animation-delay: 0.1s; }
-    .mini-eq span:nth-child(2) { height: 85%; animation-delay: 0.3s; }
-    .mini-eq span:nth-child(3) { height: 60%; animation-delay: 0.2s; }
-
-    @keyframes mini-pulse {
-      0% { transform: scaleY(0.4); }
-      100% { transform: scaleY(1); }
-    }
-
-    /* Featured Pricing Card Polish & Shimmer */
-    .popular-tag {
-      animation: pulse-badge 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes pulse-badge {
-      0% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4); }
-      100% { box-shadow: 0 0 14px 2px rgba(45, 212, 191, 0.5); }
-    }
-
-    /* Reassurance Item Micro-interaction */
-    .reassurance-item {
-      transition: transform 0.3s ease;
-    }
-
-    .reassurance-icon {
-      display: inline-block;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* Review Card Watermark Accent */
-    .review-card::after {
-      content: '“';
-      position: absolute;
-      top: 6px;
-      right: 18px;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--accent);
-      opacity: 0.08;
-      pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Step Card Dynamics */
-    .step-number {
-      display: inline-block;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    /* Interactive Gallery Items & Lightbox */
-    .gallery-item {
-      cursor: pointer;
-      position: relative;
-    }
-
-    .gallery-zoom-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transform: scale(0.85);
-      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
-      z-index: 2;
-      pointer-events: none;
+    .review-card {
+      transition: transform 0.4s var(--ease), border-color 0.4s ease;
     }
 
     /* Lightbox Modal */
@@ -892,7 +674,7 @@
       padding: clamp(1rem, 2vw, 2.5rem);
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .lightbox.is-open {
@@ -903,9 +685,7 @@
     .lightbox-backdrop {
       position: absolute;
       inset: 0;
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(15, 23, 42, 0.94);
     }
 
     .lightbox-content {
@@ -917,45 +697,33 @@
       flex-direction: column;
       align-items: center;
       z-index: 1;
-      transform: scale(0.95);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .lightbox.is-open .lightbox-content {
-      transform: scale(1);
     }
 
     .lightbox-close {
       position: absolute;
-      top: -16px;
-      right: -16px;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
+      top: -14px;
+      right: -14px;
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
       background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid var(--hairline-strong);
       color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       z-index: 2;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
-    .lightbox-close:hover {
-      background: var(--accent);
-      border-color: var(--accent-light);
-      transform: scale(1.08);
-    }
+    .lightbox-close:hover { border-color: var(--accent); }
 
     .lightbox-figure {
       background: var(--surface);
       border-radius: var(--radius);
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--hairline);
       max-width: 100%;
       display: flex;
       flex-direction: column;
@@ -969,24 +737,24 @@
     }
 
     .lightbox-caption {
-      padding: 1rem 1.25rem;
-      background: var(--surface);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.125rem 1.5rem;
+      border-top: 1px solid var(--hairline);
       text-align: center;
     }
 
     .lightbox-title {
       display: block;
+      font-family: var(--serif);
       font-size: var(--step-body);
-      font-weight: 700;
-      color: var(--accent-light);
+      font-weight: 600;
+      color: #FFFFFF;
     }
 
     .lightbox-sub {
       display: block;
       font-size: var(--step-small);
       color: var(--muted);
-      margin-top: 3px;
+      margin-top: 0.25rem;
     }
 
     /* Back to Top Button */
@@ -994,111 +762,46 @@
       position: fixed;
       bottom: clamp(1rem, 0.5rem + 2vw, 2rem);
       right: clamp(1rem, 0.5rem + 2vw, 2rem);
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: rgba(30, 41, 59, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(45, 212, 191, 0.3);
-      color: var(--accent-light);
+      width: 44px;
+      height: 44px;
+      border-radius: 2px;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid var(--hairline-strong);
+      color: var(--soft);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
       cursor: pointer;
       z-index: 900;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(12px) scale(0.9);
-      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease, background 0.2s ease, border-color 0.2s ease;
+      transition: opacity 0.4s ease, visibility 0.4s ease, border-color 0.3s ease, color 0.3s ease;
     }
 
     .back-to-top.is-visible {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0) scale(1);
-    }
-
-    .back-to-top:hover {
-      background: var(--surface);
-      border-color: var(--accent);
-      color: #FFFFFF;
-      transform: translateY(-3px) scale(1.06);
-      box-shadow: 0 14px 28px -5px rgba(20, 184, 166, 0.35);
-    }
-
-    .back-to-top svg {
-      transition: transform 0.25s ease;
-    }
-
-    .back-to-top:hover svg {
-      transform: translateY(-2px);
-    }
-
-    /* Contact Links Hover Polish */
-    .contact-links a {
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
     @media (hover: hover) and (pointer: fine) {
-      .timeline-card:hover::before,
-      .genre-box:hover::before,
-      .pricing-card:hover::before,
-      .review-card:hover::before,
-      .step-card:hover::before {
-        opacity: 1;
-      }
+      .btn-ghost:hover { border-color: var(--accent); color: #FFFFFF; }
 
       .timeline-card:hover,
-      .genre-box:hover,
       .pricing-card:hover,
-      .review-card:hover,
-      .step-card:hover {
-        border-color: rgba(45, 212, 191, 0.35);
-        box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(20, 184, 166, 0.2);
+      .review-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(45, 212, 191, 0.3);
       }
+      .pricing-card.featured:hover { border-color: var(--accent-light); }
 
-      .timeline-card:hover { transform: translateY(-6px); }
-      .genre-box:hover {
-        transform: translateY(-4px);
-        background: rgba(255, 255, 255, 0.05);
-      }
-      .genre-box:hover .mini-eq span { animation-duration: 0.65s; }
-      .pricing-card:hover { transform: translateY(-6px); }
-      .step-card:hover {
-        transform: translateY(-5px);
-        border-top-color: var(--accent-light);
-      }
-      .step-card:hover .step-number {
-        transform: scale(1.06);
-        color: var(--accent-light);
-      }
-      .review-card:hover { transform: translateY(-4px); }
-      .review-card:hover::after {
-        opacity: 0.18;
-        transform: translateY(-2px);
-      }
-      .reassurance-item:hover { transform: translateY(-3px); }
-      .reassurance-item:hover .reassurance-icon { transform: scale(1.2) translateY(-2px); }
-      .gallery-item:hover img { transform: scale(1.05); }
-      .gallery-item:hover .gallery-zoom-badge {
-        opacity: 1;
-        transform: scale(1);
-      }
-      .gallery-item:hover .gallery-overlay {
-        background: linear-gradient(0deg, rgba(15, 23, 42, 0.98) 0%, rgba(15, 23, 42, 0.82) 65%, transparent 100%);
-      }
-      .contact-links a:hover {
-        background: rgba(20, 184, 166, 0.18);
-        border-color: var(--accent);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px -6px rgba(20, 184, 166, 0.4);
-      }
-      .social-links a:hover { text-decoration: underline; }
+      .gallery-item:hover img { transform: scale(1.02); }
+      .gallery-item:hover .gallery-zoom-badge { opacity: 1; }
+
+      .social-links a:hover { color: var(--accent-light); }
+      .back-to-top:hover { border-color: var(--accent); color: #FFFFFF; }
     }
+
+    .gallery-item:focus-visible .gallery-zoom-badge { opacity: 1; }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -1112,152 +815,127 @@
         transform: none !important;
         transition: none !important;
       }
-      .hero::before {
-        animation: none !important;
-      }
-      .eq-wave span,
-      .mini-eq span,
-      .popular-tag {
-        animation: none !important;
-      }
     }
 
     @media (max-width: 420px) {
       .social-sep { display: none; }
-      .social-links { flex-direction: column; gap: 0; }
+      .social-links { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
     }
 
     @media print {
-      .scroll-progress-bar, .back-to-top, .lightbox, .gallery-zoom-badge, .eq-wave, .mini-eq { display: none !important; }
+      .back-to-top, .lightbox, .gallery-zoom-badge, .hero-actions { display: none !important; }
       .js .reveal-init { opacity: 1 !important; transform: none !important; }
       body { background: #FFF; color: #000; font-size: 11pt; }
       .container { max-width: none; padding: 0; }
-      .hero { background: none !important; border: 1px solid #CCC; box-shadow: none; padding: 20pt; }
-      .hero h1, .section-header h2, .price-title, .timeline-title,
-      .step-card h3, .repertoire-head h2, .footer-name { color: #000; }
-      .hero > p, .section-header p, .timeline-desc, .genre-box p,
+      .hero { background: none !important; border: 1px solid #CCC; padding: 20pt; }
+      .hero h1, .section-header h2, .price-title, .price-num, .stat-val, .timeline-title,
+      .step-card h3, .footer-name, .author-name { color: #000; }
+      .hero-lead, .section-header p, .timeline-desc, .genre-box p,
       .step-card p, .price-sub, .price-note, .review-quote, .reassurance-item p { color: #333; }
-      .timeline-card, .pricing-card, .review-card, .step-card,
-      .repertoire-section, .genre-box, .reassurance-bar {
+      .timeline-card, .pricing-card, .review-card {
         background: none !important;
         border: 1px solid #DDD;
-        box-shadow: none;
         break-inside: avoid;
       }
-      .gallery-grid { break-inside: avoid; }
-      .section-header { break-after: avoid; }
-      .contact-links a { background: none; border: none; color: #000; }
+      .section-header { margin-top: 24pt; break-after: avoid; }
+      .btn { border: none; color: #000; padding: 0; min-height: 0; }
     }
   </style>
 </head>
 <body>
 
-  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
-
   <div class="container">
 
-    <!-- HERO / IMMERSION -->
+    <!-- HERO -->
     <header class="hero reveal-init">
-      <span class="hero-badge">
-        <span class="eq-wave" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
-        </span>
-        Saison Mariages 2027-2028
-      </span>
-      <h1>L'Élégance du Saxophone Live pour Votre Mariage</h1>
-      <p>De la magie d'une cérémonie jusqu'à l'énergie de la soirée dansante, je sublime chaque moment fort de votre journée 🎷✨</p>
+      <p class="hero-badge">Saison mariages 2027-2028</p>
+      <h1>L'élégance du saxophone live pour votre mariage</h1>
+      <p class="hero-lead">De la cérémonie à la soirée dansante, je sublime chaque moment fort de votre journée.</p>
 
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-val">5.0 ★</div>
-          <div class="stat-lbl">Avis Google Vérifiés</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-val">100%</div>
-          <div class="stat-lbl">Sur-Mesure</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-val">Autonome</div>
-          <div class="stat-lbl">Sonorisation Pro</div>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="#formules">Voir les formules</a>
       </div>
+
+      <dl class="hero-stats">
+        <div class="stat-item">
+          <dt class="stat-lbl">Mariages célébrés</dt>
+          <dd class="stat-val">80+</dd>
+        </div>
+        <div class="stat-item">
+          <dt class="stat-lbl">De pratique</dt>
+          <dd class="stat-val">20 ans</dd>
+        </div>
+        <div class="stat-item">
+          <dt class="stat-lbl">Note Google</dt>
+          <dd class="stat-val">5,0/5</dd>
+        </div>
+      </dl>
     </header>
 
     <main>
 
-      <!-- TIMELINE DE EXPÉRIENCE -->
+      <!-- DÉROULÉ DE LA JOURNÉE -->
       <section aria-labelledby="titre-immersion" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-immersion">Une Immersion Musicale à Chaque Moment Fort</h2>
-          <p>Chaque étape de votre journée possède sa propre couleur rythmique</p>
+          <h2 id="titre-immersion">Une immersion musicale à chaque moment fort</h2>
+          <p>Chaque étape de votre journée possède sa propre couleur rythmique.</p>
         </div>
 
         <div class="timeline">
           <article class="timeline-card stagger-1">
-            <div class="timeline-icon" aria-hidden="true">💒</div>
+            <div class="timeline-num" aria-hidden="true">I</div>
             <div class="timeline-time">Cérémonie</div>
-            <h3 class="timeline-title">Émotion Pure</h3>
-            <p class="timeline-desc">J'accompagne tous les moments forts de votre cérémonie laïque ou religieuse de l'entrée des invités à la sortie des mariés. Les différents moments d'interventions (échange des alliances, signature des registres…) sont choisis par les mariés.</p>
+            <h3 class="timeline-title">Émotion pure</h3>
+            <p class="timeline-desc">J'accompagne tous les moments forts de votre cérémonie laïque ou religieuse, de l'entrée des invités à la sortie des mariés. Les moments d'intervention (échange des alliances, signature des registres…) sont choisis par les mariés.</p>
           </article>
 
           <article class="timeline-card stagger-2">
-            <div class="timeline-icon" aria-hidden="true">🍸</div>
+            <div class="timeline-num" aria-hidden="true">II</div>
             <div class="timeline-time">Cocktail</div>
-            <h3 class="timeline-title">Chic &amp; Festif</h3>
-            <p class="timeline-desc">J'adapte mon répertoire multi générationnel en fonction de l'ambiance que vous souhaitez pour votre cocktail/vin d'honneur (ambiance chill, festive, mélange des deux). Ma playlist et le rythme des musiques sont adaptés en temps réel. Vous pouvez me demander d'inclure jusqu'à 5 titres "coup de cœur". Je peux jouer en duo avec votre DJ sur tout ou une partie du cocktail s'il est présent.</p>
+            <h3 class="timeline-title">Chic et festif</h3>
+            <p class="timeline-desc">J'adapte mon répertoire multigénérationnel à l'ambiance que vous souhaitez pour votre cocktail ou vin d'honneur : calme, festive, ou un mélange des deux. La playlist et le rythme s'ajustent en temps réel. Vous pouvez me demander jusqu'à 5 titres « coup de cœur ». Si votre DJ est présent, je peux jouer en duo avec lui sur tout ou partie du cocktail.</p>
           </article>
 
           <article class="timeline-card stagger-3">
-            <div class="timeline-icon" aria-hidden="true">✨</div>
+            <div class="timeline-num" aria-hidden="true">III</div>
             <div class="timeline-time">Dîner</div>
-            <h3 class="timeline-title">Temps Forts</h3>
-            <p class="timeline-desc">J'interviens pour votre entrée en salle pour donner le ton à votre soirée, à l'arrivée du gâteau et l'ouverture de bal.</p>
+            <h3 class="timeline-title">Temps forts</h3>
+            <p class="timeline-desc">J'interviens à votre entrée en salle pour donner le ton de la soirée, à l'arrivée du gâteau et pour l'ouverture de bal.</p>
           </article>
 
           <article class="timeline-card stagger-4">
-            <div class="timeline-icon" aria-hidden="true">🔥</div>
-            <div class="timeline-time">Soirée Dansante</div>
-            <h3 class="timeline-title">Duo Sax &amp; DJ</h3>
-            <p class="timeline-desc">J'interviens au milieu de la piste pour faire monter l'énergie au maximum en collaboration avec votre DJ.</p>
+            <div class="timeline-num" aria-hidden="true">IV</div>
+            <div class="timeline-time">Soirée dansante</div>
+            <h3 class="timeline-title">Duo sax &amp; DJ</h3>
+            <p class="timeline-desc">J'interviens au milieu de la piste pour faire monter l'énergie au maximum, en collaboration avec votre DJ.</p>
           </article>
         </div>
       </section>
 
-      <!-- REPERTOIRE -->
+      <!-- RÉPERTOIRE -->
       <section class="repertoire-section reveal-init" aria-labelledby="titre-univers">
-        <div class="repertoire-head">
-          <h2 id="titre-univers">Univers &amp; Styles Musicaux</h2>
-          <p>Un répertoire moderne pensé pour faire vibrer toutes les générations</p>
+        <div class="section-header">
+          <h2 id="titre-univers">Univers et styles musicaux</h2>
+          <p>Un répertoire moderne pensé pour toutes les générations.</p>
         </div>
 
         <div class="genres-grid">
           <div class="genre-box stagger-1">
-            <div class="genre-header">
-              <h3>Deep House &amp; Electro</h3>
-              <span class="mini-eq" aria-hidden="true"><span></span><span></span><span></span></span>
-            </div>
-            <p>Klingande, Kungs, Bakermat, Robin Schulz, Kygo, Dua Lipa...</p>
+            <h3>Deep house &amp; électro</h3>
+            <p>Klingande, Kungs, Bakermat, Robin Schulz, Kygo, Dua Lipa…</p>
           </div>
           <div class="genre-box stagger-2">
-            <div class="genre-header">
-              <h3>Pop &amp; Chart-Toppers</h3>
-              <span class="mini-eq" aria-hidden="true"><span></span><span></span><span></span></span>
-            </div>
-            <p>Coldplay, Ed Sheeran, Sabrina Carpenter, Elton John, Daft Punk...</p>
+            <h3>Pop &amp; grands succès</h3>
+            <p>Coldplay, Ed Sheeran, Sabrina Carpenter, Elton John, Daft Punk…</p>
           </div>
           <div class="genre-box stagger-3">
-            <div class="genre-header">
-              <h3>Funk, Disco &amp; Soul</h3>
-              <span class="mini-eq" aria-hidden="true"><span></span><span></span><span></span></span>
-            </div>
-            <p>Earth Wind &amp; Fire, ABBA, Bruno Mars, Stevie Wonder, Michael Jackson...</p>
+            <h3>Funk, disco &amp; soul</h3>
+            <p>Earth, Wind &amp; Fire, ABBA, Bruno Mars, Stevie Wonder, Michael Jackson…</p>
           </div>
           <div class="genre-box stagger-4">
-            <div class="genre-header">
-              <h3>Romantique &amp; Cérémonie</h3>
-              <span class="mini-eq" aria-hidden="true"><span></span><span></span><span></span></span>
-            </div>
-            <p>John Legend, Yiruma, reprises acoustiques et versions instrumentales épurées...</p>
+            <h3>Romantique &amp; cérémonie</h3>
+            <p>John Legend, Yiruma, reprises acoustiques et versions instrumentales épurées…</p>
           </div>
         </div>
       </section>
@@ -1265,14 +943,14 @@
       <!-- GALERIE PHOTO -->
       <section aria-labelledby="titre-images" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-images">Aperçu en Images</h2>
-          <p>L'ambiance, l'élégance et la complicité en prestations live</p>
+          <h2 id="titre-images">Aperçu en images</h2>
+          <p>L'ambiance, l'élégance et la complicité des prestations live.</p>
         </div>
 
         <div class="gallery-grid">
-          <figure class="gallery-item stagger-1" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Cocktail &amp; Vin d'Honneur">
+          <figure class="gallery-item stagger-1" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Cocktail &amp; vin d'honneur">
             <div class="gallery-zoom-badge" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
             </div>
             <img src="/.netlify/images?url=/pm-2270.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72"
                  data-full-src="/.netlify/images?url=/pm-2270.jpg&amp;w=1400&amp;q=85"
@@ -1284,14 +962,14 @@
                  width="640" height="480" loading="lazy" decoding="async"
                  alt="Sylvain Sax au saxophone pendant un cocktail de mariage en extérieur">
             <figcaption class="gallery-overlay">
-              <span class="gallery-caption">Cocktail &amp; Vin d'Honneur</span>
-              <span class="gallery-sub">Ambiance chic &amp; lounge en extérieur</span>
+              <span class="gallery-caption">Cocktail &amp; vin d'honneur</span>
+              <span class="gallery-sub">Ambiance chic et lounge en extérieur</span>
             </figcaption>
           </figure>
 
-          <figure class="gallery-item stagger-2" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Duo Sax &amp; DJ">
+          <figure class="gallery-item stagger-2" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Duo sax &amp; DJ">
             <div class="gallery-zoom-badge" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
             </div>
             <img src="/.netlify/images?url=/10.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72"
                  data-full-src="/.netlify/images?url=/10.jpg&amp;w=1400&amp;q=85"
@@ -1302,14 +980,14 @@
                  width="640" height="480" loading="lazy" decoding="async"
                  alt="Performance en duo saxophone et DJ sur la piste de danse">
             <figcaption class="gallery-overlay">
-              <span class="gallery-caption">Duo Sax &amp; DJ</span>
-              <span class="gallery-sub">Énergie maximum sur la piste de danse</span>
+              <span class="gallery-caption">Duo sax &amp; DJ</span>
+              <span class="gallery-sub">Toute l'énergie de la piste de danse</span>
             </figcaption>
           </figure>
 
-          <figure class="gallery-item stagger-3" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Cérémonie Laïque &amp; Religieuse">
+          <figure class="gallery-item stagger-3" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Cérémonie laïque &amp; religieuse">
             <div class="gallery-zoom-badge" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
             </div>
             <img src="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;position=top&amp;q=72"
                  data-full-src="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=1400&amp;q=85"
@@ -1321,92 +999,84 @@
                  width="640" height="480" loading="lazy" decoding="async"
                  alt="Saxophoniste accompagnant une cérémonie de mariage">
             <figcaption class="gallery-overlay">
-              <span class="gallery-caption">Cérémonie Laïque &amp; Religieuse</span>
-              <span class="gallery-sub">Émotion et moments forts sur-mesure</span>
+              <span class="gallery-caption">Cérémonie laïque &amp; religieuse</span>
+              <span class="gallery-sub">Émotion et moments forts sur mesure</span>
             </figcaption>
           </figure>
         </div>
       </section>
 
       <!-- FORMULES -->
-      <section aria-labelledby="titre-formules" class="reveal-init">
+      <section id="formules" aria-labelledby="titre-formules" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-formules">Les Formules Mariage 2027-2028</h2>
-          <p>Des prestations clé en main avec engagement d'excellence</p>
+          <h2 id="titre-formules">Les formules mariage 2027-2028</h2>
+          <p>Des prestations clés en main, sonorisation incluse.</p>
         </div>
 
         <div class="pricing-grid">
           <article class="pricing-card stagger-1">
-            <div>
-              <h3 class="price-title">Formule Cocktail</h3>
-              <div class="price-sub">Animation élégante du Vin d'Honneur</div>
-              <div class="price-amount">
-                <span class="price-num">840 €*</span>
-                <span class="price-ht">TTC (700 € HT)</span>
-              </div>
-              <p class="price-note">* Hors frais de déplacement</p>
-              <ul class="price-features">
-                <li>Performance Saxophone Live durant le cocktail</li>
-                <li>Possibilité de jouer en duo avec le DJ</li>
-                <li>Programmation musicale sur-mesure</li>
-                <li>Jusqu'à 5 demandes spécifiques incluses</li>
-                <li>Matériel de sonorisation inclus</li>
-                <li>Mise à disposition d'un micro pour les discours &amp; annonces durant le cocktail</li>
-              </ul>
+            <h3 class="price-title">Formule cocktail</h3>
+            <p class="price-sub">Animation du vin d'honneur</p>
+            <div class="price-amount">
+              <span class="price-num">840 €</span>
+              <span class="price-ht">TTC · 700 € HT</span>
             </div>
+            <p class="price-note">Frais de déplacement en sus, selon le lieu de réception.</p>
+            <ul class="price-features">
+              <li>Saxophone live pendant tout le cocktail</li>
+              <li>Possibilité de jouer en duo avec le DJ</li>
+              <li>Programmation musicale sur mesure</li>
+              <li>Jusqu'à 5 demandes spécifiques incluses</li>
+              <li>Sonorisation incluse</li>
+              <li>Micro à disposition pour les discours et annonces</li>
+            </ul>
           </article>
 
           <article class="pricing-card featured stagger-2">
-            <span class="popular-tag">Expérience Totale</span>
-            <div>
-              <h3 class="price-title">Journée Complète</h3>
-              <div class="price-sub">De la Cérémonie jusqu'à 01h du matin</div>
-              <div class="price-amount">
-                <span class="price-num">1 680 €*</span>
-                <span class="price-ht">TTC (1 400 € HT)</span>
-              </div>
-              <p class="price-note">* Hors frais de déplacement</p>
-              <ul class="price-features">
-                <li>Réunion de préparation personnalisée en Visio</li>
-                <li>Cérémonie : Morceaux clés personnalisés sur-mesure</li>
-                <li>Cocktail : Animation complète (solo ou duo avec le DJ) + 5 morceaux "coup de cœur"</li>
-                <li>Mise à disposition d'un micro pour les discours &amp; annonces durant le cocktail</li>
-                <li>Dîner &amp; Soirée : Entrée en salle, gâteau, ouverture de bal &amp; duo avec le DJ (jusqu'à 01h max)</li>
-              </ul>
+            <span class="popular-tag">Expérience totale</span>
+            <h3 class="price-title">Journée complète</h3>
+            <p class="price-sub">De la cérémonie jusqu'à 1 h du matin</p>
+            <div class="price-amount">
+              <span class="price-num">1 680 €</span>
+              <span class="price-ht">TTC · 1 400 € HT</span>
             </div>
+            <p class="price-note">Frais de déplacement en sus, selon le lieu de réception.</p>
+            <ul class="price-features">
+              <li>Réunion de préparation personnalisée en visio</li>
+              <li>Cérémonie : morceaux clés choisis avec vous</li>
+              <li>Cocktail : animation complète, en solo ou en duo avec le DJ, et 5 titres « coup de cœur »</li>
+              <li>Micro à disposition pour les discours et annonces du cocktail</li>
+              <li>Dîner et soirée : entrée en salle, gâteau, ouverture de bal et duo avec le DJ (jusqu'à 1 h)</li>
+            </ul>
           </article>
         </div>
       </section>
 
-      <!-- SÉRÉNITÉ / ASSURANCE / TECH -->
-      <section class="reassurance-bar reveal-init" aria-label="Garanties et matériel">
+      <!-- GARANTIES -->
+      <section class="reassurance-bar reveal-init" aria-label="Garanties">
         <div class="reassurance-item stagger-1">
-          <div class="reassurance-icon" aria-hidden="true">🔊</div>
-          <h3>Sonorisation Adaptée</h3>
-          <p>Matériel de sonorisation adapté à chaque moment clé de la journée</p>
+          <h3>Sonorisation adaptée</h3>
+          <p>Un matériel dimensionné pour chaque moment de la journée.</p>
         </div>
         <div class="reassurance-item stagger-2">
-          <div class="reassurance-icon" aria-hidden="true">🤝</div>
           <h3>Synergie avec le DJ</h3>
-          <p>Coordination technique et musicale avec le DJ.</p>
+          <p>Coordination technique et musicale en amont et sur place.</p>
         </div>
         <div class="reassurance-item stagger-3">
-          <div class="reassurance-icon" aria-hidden="true">🛡️</div>
-          <h3>Assurance RC PRO</h3>
-          <p>Protection du lieu &amp; des invités<br><span class="ref">Orus – N°RCPH278508955</span></p>
+          <h3>Assurance RC Pro</h3>
+          <p>Protection du lieu et des invités. Attestation fournie sur demande.</p>
         </div>
         <div class="reassurance-item stagger-4">
-          <div class="reassurance-icon" aria-hidden="true">⭐</div>
-          <h3>Satisfaction 5/5</h3>
-          <p>Plus de 80 mariages célébrés &amp; 20 ans de pratique</p>
+          <h3>Expérience</h3>
+          <p>Plus de 80 mariages et 20 ans de pratique.</p>
         </div>
       </section>
 
       <!-- AVIS & TÉMOIGNAGES -->
       <section aria-labelledby="titre-avis" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-avis">Témoignages &amp; Retour d'Expérience</h2>
-          <p>Ce que les mariés et leurs convives ont pensé du show</p>
+          <h2 id="titre-avis">Ils racontent leur mariage</h2>
+          <p>Ce que les mariés retiennent de leur journée.</p>
         </div>
 
         <div class="reviews-grid">
@@ -1428,7 +1098,7 @@
             </div>
             <footer class="review-author">
               <span class="author-name">Marion Hvt</span>
-              <span class="review-badge">Journée Complète</span>
+              <span class="review-badge">Journée complète</span>
             </footer>
           </blockquote>
 
@@ -1448,67 +1118,61 @@
       <!-- COMMENT RÉSERVER -->
       <section aria-labelledby="titre-reserver" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-reserver">Comment Réserver ?</h2>
-          <p>Un accompagnement simple et structuré étape par étape</p>
+          <h2 id="titre-reserver">Comment réserver</h2>
+          <p>Un accompagnement simple, étape par étape.</p>
         </div>
 
-        <div class="steps-grid">
-          <div class="step-card stagger-1">
-            <div class="step-number">01. CONTACT</div>
-            <h3>Premier Échange</h3>
-            <p>Par téléphone, Instagram ou e-mail pour vérifier la disponibilité de votre date.</p>
-          </div>
-
-          <div class="step-card stagger-2">
-            <div class="step-number">02. CONTRAT</div>
+        <ol class="steps-grid">
+          <li class="step-card stagger-1">
+            <div class="step-number">01 · Contact</div>
+            <h3>Premier échange</h3>
+            <p>Par téléphone, Instagram ou e-mail, pour vérifier la disponibilité de votre date.</p>
+          </li>
+          <li class="step-card stagger-2">
+            <div class="step-number">02 · Contrat</div>
             <h3>Réservation</h3>
-            <p>Signature d'un contrat de réservation clair protégeant chaque partie.</p>
-          </div>
-
-          <div class="step-card stagger-3">
-            <div class="step-number">03. PRÉPARATIFS</div>
-            <h3>Sur-Mesure</h3>
-            <p>Choix des morceaux clés et calage de l'emploi du temps (au plus tôt c'est le mieux !).</p>
-          </div>
-
-          <div class="step-card stagger-4">
-            <div class="step-number">04. LE JOUR J</div>
-            <h3>Profitez !</h3>
-            <p>Gestion logistique 100% gérée. Il ne vous reste plus qu'à vivre l'instant présent.</p>
-          </div>
-        </div>
+            <p>Signature d'un contrat de réservation clair, qui protège chaque partie.</p>
+          </li>
+          <li class="step-card stagger-3">
+            <div class="step-number">03 · Préparatifs</div>
+            <h3>Sur mesure</h3>
+            <p>Choix des morceaux clés et calage du déroulé. Le plus tôt sera le mieux.</p>
+          </li>
+          <li class="step-card stagger-4">
+            <div class="step-number">04 · Le jour J</div>
+            <h3>Profitez</h3>
+            <p>Je m'occupe de toute la logistique musicale. Il ne vous reste qu'à vivre l'instant.</p>
+          </li>
+        </ol>
       </section>
 
     </main>
 
-    <!-- FOOTER & CONTACT -->
-    <footer>
-      <p class="footer-name">Sylvain Sax — Saxophoniste Performeur</p>
+    <!-- PIED DE PAGE & CONTACT -->
+    <footer class="site-footer">
+      <p class="footer-name">Sylvain Sax</p>
+      <p class="footer-role">Saxophoniste performeur</p>
 
       <div class="contact-links">
-        <a href="tel:+33628933995" aria-label="Appeler le 06 28 93 39 95">
-          <span aria-hidden="true">📞</span><span>06 28 93 39 95</span>
-        </a>
-        <a href="mailto:sylvainchazalette@gmail.com" aria-label="Envoyer un e-mail à sylvainchazalette@gmail.com">
-          <span aria-hidden="true">✉️</span><span>sylvainchazalette@gmail.com</span>
-        </a>
+        <a class="btn btn-ghost" href="tel:+33628933995" aria-label="Appeler le 06 28 93 39 95">06 28 93 39 95</a>
+        <a class="btn btn-ghost btn-email" href="mailto:sylvainchazalette@gmail.com" aria-label="Envoyer un e-mail à sylvainchazalette@gmail.com">sylvainchazalette@gmail.com</a>
       </div>
 
       <div class="social-links">
-        <a href="https://www.instagram.com/sylvain_sax/" target="_blank" rel="noopener">Instagram : @sylvain_sax</a>
-        <span class="social-sep" aria-hidden="true">•</span>
-        <a href="https://share.google/Izy8KLIvbz9t36eET" target="_blank" rel="noopener">Consulter les Avis Google (5.0 ★)</a>
+        <a href="https://www.instagram.com/sylvain_sax/" target="_blank" rel="noopener">Instagram · @sylvain_sax</a>
+        <span class="social-sep" aria-hidden="true">·</span>
+        <a href="https://share.google/Izy8KLIvbz9t36eET" target="_blank" rel="noopener">Avis Google · 5,0/5</a>
       </div>
     </footer>
 
   </div>
 
-  <!-- LIGHTBOX MODAL -->
-  <aside class="lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-hidden="true">
     <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
     <div class="lightbox-content">
       <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer la vue agrandie">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
       <figure class="lightbox-figure">
         <img src="" alt="" class="lightbox-img" id="lightboxImg">
@@ -1518,11 +1182,10 @@
         </figcaption>
       </figure>
     </div>
-  </aside>
+  </div>
 
-  <!-- BACK TO TOP BUTTON -->
   <button type="button" class="back-to-top" id="backToTop" aria-label="Remonter en haut de la page">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
@@ -1531,8 +1194,7 @@
     (function () {
       'use strict';
 
-      // 1. Reading Progress Bar & Back to top button visibility
-      var progressBar = document.getElementById('scrollProgressBar');
+      // 1. Back to top button visibility
       var backToTopBtn = document.getElementById('backToTop');
       var ticking = false;
 
@@ -1540,19 +1202,8 @@
         if (!ticking) {
           window.requestAnimationFrame(function () {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-            var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-
-            if (progressBar) {
-              progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
-            }
-
             if (backToTopBtn) {
-              if (scrollTop > 450) {
-                backToTopBtn.classList.add('is-visible');
-              } else {
-                backToTopBtn.classList.remove('is-visible');
-              }
+              backToTopBtn.classList.toggle('is-visible', scrollTop > 450);
             }
             ticking = false;
           });
@@ -1570,8 +1221,8 @@
       }
 
       // 2. Intersection Observer for Scroll Reveals
+      var revealElements = document.querySelectorAll('.reveal-init');
       if ('IntersectionObserver' in window) {
-        var revealElements = document.querySelectorAll('.reveal-init');
         var revealObserver = new IntersectionObserver(function (entries, observer) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
@@ -1589,27 +1240,12 @@
         });
       } else {
         // Fallback for browsers without IntersectionObserver
-        var fallbackReveals = document.querySelectorAll('.reveal-init');
-        fallbackReveals.forEach(function (el) {
+        revealElements.forEach(function (el) {
           el.classList.add('is-revealed');
         });
       }
 
-      // 3. Subtle Interactive Card Spotlight (Pointer tracking)
-      var spotlightCards = document.querySelectorAll('.timeline-card, .genre-box, .pricing-card, .review-card, .step-card');
-      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        spotlightCards.forEach(function (card) {
-          card.addEventListener('mousemove', function (e) {
-            var rect = card.getBoundingClientRect();
-            var x = e.clientX - rect.left;
-            var y = e.clientY - rect.top;
-            card.style.setProperty('--mouse-x', x + 'px');
-            card.style.setProperty('--mouse-y', y + 'px');
-          });
-        });
-      }
-
-      // 4. Accessible Photo Gallery Lightbox
+      // 3. Accessible Photo Gallery Lightbox
       var lightbox = document.getElementById('imageLightbox');
       var lightboxImg = document.getElementById('lightboxImg');
       var lightboxTitle = document.getElementById('lightboxTitle');
@@ -1668,8 +1304,13 @@
       if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
 
       window.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
+        if (!lightbox || !lightbox.classList.contains('is-open')) return;
+        if (e.key === 'Escape') {
           closeLightbox();
+        } else if (e.key === 'Tab' && lightboxClose) {
+          // The close button is the only control in the dialog: keep focus inside
+          e.preventDefault();
+          lightboxClose.focus();
         }
       });
     })();
