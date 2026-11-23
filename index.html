@@ -4,39 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sylvain Sax — Saxophoniste pour mariage · Formules 2027-2028</title>
-  <meta name="description" content="Saxophoniste performeur pour mariage : cérémonie, cocktail, dîner et soirée dansante en duo avec le DJ. Formules 2027-2028 clés en main, sonorisation incluse. Plus de 80 mariages, 20 ans de pratique, note de 5,0 sur Google.">
+  <meta name="description" content="Saxophoniste performeur pour mariage : cérémonie, cocktail, dîner et soirée dansante en duo avec le DJ. Formules 2027-2028 clés en main, sonorisation incluse.">
   <meta name="theme-color" content="#0F172A">
-  <meta name="format-detection" content="telephone=yes">
-  <link rel="canonical" href="https://brochure-sylvain-sax-2028.netlify.app/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F172A'/%3E%3Ctext x='32' y='45' font-size='34' text-anchor='middle' fill='%2314B8A6' font-family='Georgia,serif' font-weight='bold'%3ES%3C/text%3E%3C/svg%3E">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:title" content="Sylvain Sax — L'élégance du saxophone live pour votre mariage">
-  <meta property="og:description" content="De la cérémonie à la soirée dansante, je sublime chaque moment fort de votre journée. Formules mariage 2027-2028.">
-  <meta property="og:url" content="https://brochure-sylvain-sax-2028.netlify.app/">
-  <meta property="og:image" content="https://brochure-sylvain-sax-2028.netlify.app/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&amp;w=1200&amp;h=630&amp;fit=cover&amp;q=80">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap">
-
-  <!-- Preload the hero image at the size each class of device actually needs -->
-  <link rel="preload" as="image" fetchpriority="high" media="(max-width: 640px)"
-        href="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&amp;w=800&amp;q=68">
-  <link rel="preload" as="image" fetchpriority="high" media="(min-width: 641px)"
-        href="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&amp;w=1600&amp;q=72">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap">
 
   <style>
-    /* ============================================================
-       FLUID DESIGN TOKENS
-       Every size interpolates between a phone-safe minimum and a
-       desktop maximum, so the layout reads well at any width
-       instead of snapping between a handful of breakpoints.
-       ============================================================ */
     :root {
       --bg: #0F172A;
       --surface: #1E293B;
@@ -87,15 +63,12 @@
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
-      /* Respect notches and rounded display corners */
       padding-left: env(safe-area-inset-left);
       padding-right: env(safe-area-inset-right);
     }
 
     img { max-width: 100%; height: auto; display: block; }
-
     a { color: var(--accent); }
-
     ul, ol { list-style: none; }
 
     :focus-visible {
@@ -103,13 +76,79 @@
       outline-offset: 4px;
     }
 
+    /* ============================================================
+       LANGUAGE SWITCHER
+       ============================================================ */
+    .lang-switcher {
+      position: fixed;
+      top: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+      right: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+      z-index: 1000;
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--hairline-strong);
+      border-radius: 6px;
+      padding: 0.375rem 0.5rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      text-transform: uppercase;
+    }
+
+    .lang-btn .flag {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .lang-btn.active {
+      background: rgba(20, 184, 166, 0.15);
+      border-color: var(--accent);
+      color: var(--accent-light);
+    }
+
+    .lang-btn:not(.active):hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--soft);
+    }
+
+    /* Language visibility */
+    [data-lang="en"] { display: none; }
+    [data-lang="fr"] { display: block; }
+    .lang-en [data-lang="en"] { display: block; }
+    .lang-en [data-lang="fr"] { display: none; }
+
+    /* Inline spans for mixed content */
+    span[data-lang="en"] { display: none; }
+    span[data-lang="fr"] { display: inline; }
+    .lang-en span[data-lang="en"] { display: inline; }
+    .lang-en span[data-lang="fr"] { display: none; }
+
+    /* ============================================================
+       LAYOUT
+       ============================================================ */
     .container {
       max-width: 1160px;
       margin-inline: auto;
       padding: clamp(1rem, 0.5rem + 2vw, 2.5rem) clamp(1.25rem, 0.75rem + 2.5vw, 2.5rem) clamp(3rem, 2rem + 4vw, 5rem);
     }
 
-    /* TYPOGRAPHY */
     h1, h2, h3, .serif { font-family: var(--serif); font-weight: 600; }
     h1, h2 { text-wrap: balance; letter-spacing: -0.01em; }
     p { text-wrap: pretty; }
@@ -130,7 +169,6 @@
       line-height: 1.5;
     }
 
-    /* BUTTONS */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -151,7 +189,7 @@
 
     .btn-ghost { background: transparent; color: var(--soft); border-color: var(--hairline-strong); }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       position: relative;
       background-color: #16213c;
@@ -170,13 +208,6 @@
       .hero {
         background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.8) 100%),
                           url('/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&w=1600&q=72');
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .hero {
-        background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.8) 100%),
-                          url('/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-1459.jpg&w=2200&q=74');
       }
     }
 
@@ -237,7 +268,6 @@
       font-weight: 600;
       color: #FFFFFF;
       line-height: 1.1;
-      font-variant-numeric: lining-nums;
       white-space: nowrap;
     }
 
@@ -247,7 +277,6 @@
       margin-top: 0.625rem;
     }
 
-    /* SECTION TITLES */
     .section-header {
       text-align: center;
       margin: var(--section-gap) 0 clamp(2.5rem, 1.75rem + 3vw, 4.5rem) 0;
@@ -259,7 +288,6 @@
       line-height: 1.15;
     }
 
-    /* Thin rule under each section title */
     .section-header h2::after {
       content: '';
       display: block;
@@ -278,8 +306,7 @@
       margin-inline: auto;
     }
 
-
-    /* STORY / EXPERIENCE TIMELINE */
+    /* TIMELINE */
     .timeline {
       display: grid;
       grid-template-columns: 1fr;
@@ -321,7 +348,7 @@
       line-height: 1.75;
     }
 
-    /* REPERTOIRE SHOWCASE */
+    /* REPERTOIRE */
     .genres-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -337,10 +364,9 @@
     }
 
     .genre-box h3 { color: var(--accent-light); margin-bottom: 0.75rem; }
-
     .genre-box p { font-size: var(--step-small); color: var(--muted); line-height: 1.7; }
 
-    /* GALERIE PHOTO */
+    /* GALLERY */
     .gallery-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -404,7 +430,7 @@
       pointer-events: none;
     }
 
-    /* FORMULES SHOWCASE */
+    /* PRICING */
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -460,7 +486,6 @@
       font-weight: 600;
       color: #FFFFFF;
       line-height: 1;
-      font-variant-numeric: lining-nums;
       white-space: nowrap;
     }
 
@@ -494,7 +519,7 @@
       background: var(--accent);
     }
 
-    /* REASSURANCE BAR — editorial, no frame */
+    /* REASSURANCE */
     .reassurance-bar {
       display: grid;
       grid-template-columns: 1fr;
@@ -510,7 +535,7 @@
     .reassurance-item h3 { color: var(--accent-light); }
     .reassurance-item p { font-size: var(--step-small); color: var(--muted); margin-top: 0.5rem; line-height: 1.65; }
 
-    /* SECTION AVIS */
+    /* REVIEWS */
     .reviews-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -557,10 +582,9 @@
     }
 
     .author-name { font-size: var(--step-small); font-weight: 600; color: #FFFFFF; }
-
     .review-badge { color: var(--accent-light); letter-spacing: 0.14em; white-space: nowrap; }
 
-    /* BOOKING STEPS */
+    /* STEPS */
     .steps-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -614,7 +638,6 @@
       margin-bottom: 1.75rem;
     }
 
-    /* E-mail addresses read badly in uppercase */
     .btn-email { text-transform: none; letter-spacing: 0.04em; font-size: 0.875rem; overflow-wrap: anywhere; }
 
     .social-links {
@@ -638,9 +661,7 @@
 
     .social-sep { color: var(--faint); }
 
-    /* ============================================================
-       MOTION — restrained: soft reveals, 2px hovers, no loops
-       ============================================================ */
+    /* MOTION */
     .js .reveal-init {
       opacity: 0;
       transform: translateY(12px);
@@ -663,7 +684,7 @@
       transition: transform 0.4s var(--ease), border-color 0.4s ease;
     }
 
-    /* Lightbox Modal */
+    /* LIGHTBOX */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -677,10 +698,7 @@
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
-    .lightbox.is-open {
-      opacity: 1;
-      visibility: visible;
-    }
+    .lightbox.is-open { opacity: 1; visibility: visible; }
 
     .lightbox-backdrop {
       position: absolute;
@@ -757,7 +775,7 @@
       margin-top: 0.25rem;
     }
 
-    /* Back to Top Button */
+    /* BACK TO TOP */
     .back-to-top {
       position: fixed;
       bottom: clamp(1rem, 0.5rem + 2vw, 2rem);
@@ -778,14 +796,10 @@
       transition: opacity 0.4s ease, visibility 0.4s ease, border-color 0.3s ease, color 0.3s ease;
     }
 
-    .back-to-top.is-visible {
-      opacity: 1;
-      visibility: visible;
-    }
+    .back-to-top.is-visible { opacity: 1; visibility: visible; }
 
     @media (hover: hover) and (pointer: fine) {
       .btn-ghost:hover { border-color: var(--accent); color: #FFFFFF; }
-
       .timeline-card:hover,
       .pricing-card:hover,
       .review-card:hover {
@@ -793,10 +807,8 @@
         border-color: rgba(45, 212, 191, 0.3);
       }
       .pricing-card.featured:hover { border-color: var(--accent-light); }
-
       .gallery-item:hover img { transform: scale(1.02); }
       .gallery-item:hover .gallery-zoom-badge { opacity: 1; }
-
       .social-links a:hover { color: var(--accent-light); }
       .back-to-top:hover { border-color: var(--accent); color: #FFFFFF; }
     }
@@ -807,7 +819,6 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
       .js .reveal-init {
@@ -822,52 +833,67 @@
       .social-links { flex-direction: column; }
       .hero-actions .btn { width: 100%; }
     }
-
-    @media print {
-      .back-to-top, .lightbox, .gallery-zoom-badge, .hero-actions { display: none !important; }
-      .js .reveal-init { opacity: 1 !important; transform: none !important; }
-      body { background: #FFF; color: #000; font-size: 11pt; }
-      .container { max-width: none; padding: 0; }
-      .hero { background: none !important; border: 1px solid #CCC; padding: 20pt; }
-      .hero h1, .section-header h2, .price-title, .price-num, .stat-val, .timeline-title,
-      .step-card h3, .footer-name, .author-name { color: #000; }
-      .hero-lead, .section-header p, .timeline-desc, .genre-box p,
-      .step-card p, .price-sub, .price-note, .review-quote, .reassurance-item p { color: #333; }
-      .timeline-card, .pricing-card, .review-card {
-        background: none !important;
-        border: 1px solid #DDD;
-        break-inside: avoid;
-      }
-      .section-header { margin-top: 24pt; break-after: avoid; }
-      .btn { border: none; color: #000; padding: 0; min-height: 0; }
-    }
   </style>
 </head>
 <body>
+
+  <!-- LANGUAGE SWITCHER -->
+  <div class="lang-switcher" role="navigation" aria-label="Language / Langue">
+    <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')" aria-label="Français" title="Français">
+      <span class="flag">🇫🇷</span> FR
+    </button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-label="English" title="English">
+      <span class="flag">🇬🇧</span> EN
+    </button>
+  </div>
 
   <div class="container">
 
     <!-- HERO -->
     <header class="hero reveal-init">
-      <p class="hero-badge">Saison mariages 2027-2028</p>
-      <h1>L'élégance du saxophone live pour votre mariage</h1>
-      <p class="hero-lead">De la cérémonie à la soirée dansante, je sublime chaque moment fort de votre journée.</p>
+      <p class="hero-badge">
+        <span data-lang="fr">Saison mariages 2027-2028</span>
+        <span data-lang="en">Wedding Season 2027-2028</span>
+      </p>
+      <h1>
+        <span data-lang="fr">L'élégance du saxophone live pour votre mariage</span>
+        <span data-lang="en">Live saxophone elegance for your wedding</span>
+      </h1>
+      <p class="hero-lead">
+        <span data-lang="fr">De la cérémonie à la soirée dansante, je sublime chaque moment fort de votre journée.</span>
+        <span data-lang="en">From the ceremony to the dance floor, I elevate every highlight of your day.</span>
+      </p>
 
       <div class="hero-actions">
-        <a class="btn btn-ghost" href="#formules">Voir les formules</a>
+        <a class="btn btn-ghost" href="#formules">
+          <span data-lang="fr">Voir les formules</span>
+          <span data-lang="en">View packages</span>
+        </a>
       </div>
 
       <dl class="hero-stats">
         <div class="stat-item">
-          <dt class="stat-lbl">Mariages célébrés</dt>
+          <dt class="stat-lbl">
+            <span data-lang="fr">Mariages célébrés</span>
+            <span data-lang="en">Weddings performed</span>
+          </dt>
           <dd class="stat-val">80+</dd>
         </div>
         <div class="stat-item">
-          <dt class="stat-lbl">De pratique</dt>
-          <dd class="stat-val">20 ans</dd>
+          <dt class="stat-lbl">
+            <span data-lang="fr">De pratique</span>
+            <span data-lang="en">Experience</span>
+          </dt>
+          <dd class="stat-val">
+            <span data-lang="fr">20 ans</span>
+            <span data-lang="en">20 yrs</span>
+          </dd>
         </div>
         <div class="stat-item">
-          <dt class="stat-lbl">Note Google</dt>
+          <dt class="stat-lbl">
+            <span data-lang="fr">Note Google</span>
+            <span data-lang="en">Google rating</span>
+          </dt>
           <dd class="stat-val">5,0/5</dd>
         </div>
       </dl>
@@ -875,40 +901,82 @@
 
     <main>
 
-      <!-- DÉROULÉ DE LA JOURNÉE -->
+      <!-- DÉROULÉ / TIMELINE -->
       <section aria-labelledby="titre-immersion" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-immersion">Une immersion musicale à chaque moment fort</h2>
-          <p>Chaque étape de votre journée possède sa propre couleur rythmique.</p>
+          <h2 id="titre-immersion">
+            <span data-lang="fr">Une immersion musicale à chaque moment fort</span>
+            <span data-lang="en">A musical journey through every key moment</span>
+          </h2>
+          <p>
+            <span data-lang="fr">Chaque étape de votre journée possède sa propre couleur rythmique.</span>
+            <span data-lang="en">Each stage of your day has its own musical atmosphere.</span>
+          </p>
         </div>
 
         <div class="timeline">
           <article class="timeline-card stagger-1">
             <div class="timeline-num" aria-hidden="true">I</div>
-            <div class="timeline-time">Cérémonie</div>
-            <h3 class="timeline-title">Émotion pure</h3>
-            <p class="timeline-desc">J'accompagne tous les moments forts de votre cérémonie laïque ou religieuse, de l'entrée des invités à la sortie des mariés. Les moments d'intervention (échange des alliances, signature des registres…) sont choisis par les mariés.</p>
+            <div class="timeline-time">
+              <span data-lang="fr">Cérémonie</span>
+              <span data-lang="en">Ceremony</span>
+            </div>
+            <h3 class="timeline-title">
+              <span data-lang="fr">Émotion pure</span>
+              <span data-lang="en">Pure emotion</span>
+            </h3>
+            <p class="timeline-desc">
+              <span data-lang="fr">J'accompagne tous les moments forts de votre cérémonie laïque ou religieuse, de l'entrée des invités à la sortie des mariés. Les moments d'intervention (échange des alliances, signature des registres…) sont choisis par les mariés.</span>
+              <span data-lang="en">I accompany all the key moments of your civil or religious ceremony, from the guests' entrance to the couple's exit. The specific moments (ring exchange, signing of the register…) are chosen by you.</span>
+            </p>
           </article>
 
           <article class="timeline-card stagger-2">
             <div class="timeline-num" aria-hidden="true">II</div>
-            <div class="timeline-time">Cocktail</div>
-            <h3 class="timeline-title">Chic et festif</h3>
-            <p class="timeline-desc">J'adapte mon répertoire multigénérationnel à l'ambiance que vous souhaitez pour votre cocktail ou vin d'honneur : calme, festive, ou un mélange des deux. La playlist et le rythme s'ajustent en temps réel. Vous pouvez me demander jusqu'à 5 titres « coup de cœur ». Si votre DJ est présent, je peux jouer en duo avec lui sur tout ou partie du cocktail.</p>
+            <div class="timeline-time">
+              <span data-lang="fr">Cocktail</span>
+              <span data-lang="en">Cocktail hour</span>
+            </div>
+            <h3 class="timeline-title">
+              <span data-lang="fr">Chic et festif</span>
+              <span data-lang="en">Chic &amp; festive</span>
+            </h3>
+            <p class="timeline-desc">
+              <span data-lang="fr">J'adapte mon répertoire multigénérationnel à l'ambiance que vous souhaitez pour votre cocktail ou vin d'honneur : calme, festive, ou un mélange des deux. La playlist et le rythme s'ajustent en temps réel. Vous pouvez me demander jusqu'à 5 titres « coup de cœur ». Si votre DJ est présent, je peux jouer en duo avec lui sur tout ou partie du cocktail.</span>
+              <span data-lang="en">I adapt my multi-generational repertoire to the vibe you want for your cocktail hour: relaxed, festive, or a blend of both. The playlist and tempo adjust in real time. You can request up to 5 personal favourites. If your DJ is there, I can perform alongside them for all or part of the cocktail hour.</span>
+            </p>
           </article>
 
           <article class="timeline-card stagger-3">
             <div class="timeline-num" aria-hidden="true">III</div>
-            <div class="timeline-time">Dîner</div>
-            <h3 class="timeline-title">Temps forts</h3>
-            <p class="timeline-desc">J'interviens à votre entrée en salle pour donner le ton de la soirée, à l'arrivée du gâteau et pour l'ouverture de bal.</p>
+            <div class="timeline-time">
+              <span data-lang="fr">Dîner</span>
+              <span data-lang="en">Dinner</span>
+            </div>
+            <h3 class="timeline-title">
+              <span data-lang="fr">Temps forts</span>
+              <span data-lang="en">Highlights</span>
+            </h3>
+            <p class="timeline-desc">
+              <span data-lang="fr">J'interviens à votre entrée en salle pour donner le ton de la soirée, à l'arrivée du gâteau et pour l'ouverture de bal.</span>
+              <span data-lang="en">I perform at your grand entrance into the dining room, the cake arrival, and the first dance opening.</span>
+            </p>
           </article>
 
           <article class="timeline-card stagger-4">
             <div class="timeline-num" aria-hidden="true">IV</div>
-            <div class="timeline-time">Soirée dansante</div>
-            <h3 class="timeline-title">Duo sax &amp; DJ</h3>
-            <p class="timeline-desc">J'interviens au milieu de la piste pour faire monter l'énergie au maximum, en collaboration avec votre DJ.</p>
+            <div class="timeline-time">
+              <span data-lang="fr">Soirée dansante</span>
+              <span data-lang="en">Dance floor</span>
+            </div>
+            <h3 class="timeline-title">
+              <span data-lang="fr">Duo sax &amp; DJ</span>
+              <span data-lang="en">Sax &amp; DJ duo</span>
+            </h3>
+            <p class="timeline-desc">
+              <span data-lang="fr">J'interviens au milieu de la piste pour faire monter l'énergie au maximum, en collaboration avec votre DJ.</span>
+              <span data-lang="en">I step onto the dance floor to push the energy to its peak, in collaboration with your DJ.</span>
+            </p>
           </article>
         </div>
       </section>
@@ -916,8 +984,14 @@
       <!-- RÉPERTOIRE -->
       <section class="repertoire-section reveal-init" aria-labelledby="titre-univers">
         <div class="section-header">
-          <h2 id="titre-univers">Univers et styles musicaux</h2>
-          <p>Un répertoire moderne pensé pour toutes les générations.</p>
+          <h2 id="titre-univers">
+            <span data-lang="fr">Univers et styles musicaux</span>
+            <span data-lang="en">Musical universe &amp; styles</span>
+          </h2>
+          <p>
+            <span data-lang="fr">Un répertoire moderne pensé pour toutes les générations.</span>
+            <span data-lang="en">A modern repertoire designed for all generations.</span>
+          </p>
         </div>
 
         <div class="genres-grid">
@@ -926,7 +1000,10 @@
             <p>Klingande, Kungs, Bakermat, Robin Schulz, Kygo, Dua Lipa…</p>
           </div>
           <div class="genre-box stagger-2">
-            <h3>Pop &amp; grands succès</h3>
+            <h3>
+              <span data-lang="fr">Pop &amp; grands succès</span>
+              <span data-lang="en">Pop &amp; big hits</span>
+            </h3>
             <p>Coldplay, Ed Sheeran, Sabrina Carpenter, Elton John, Daft Punk…</p>
           </div>
           <div class="genre-box stagger-3">
@@ -934,234 +1011,421 @@
             <p>Earth, Wind &amp; Fire, ABBA, Bruno Mars, Stevie Wonder, Michael Jackson…</p>
           </div>
           <div class="genre-box stagger-4">
-            <h3>Romantique &amp; cérémonie</h3>
-            <p>John Legend, Yiruma, reprises acoustiques et versions instrumentales épurées…</p>
+            <h3>
+              <span data-lang="fr">Romantique &amp; cérémonie</span>
+              <span data-lang="en">Romantic &amp; ceremony</span>
+            </h3>
+            <p>John Legend, Yiruma,
+              <span data-lang="fr">reprises acoustiques et versions instrumentales épurées…</span>
+              <span data-lang="en">acoustic covers and clean instrumental versions…</span>
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- GALERIE PHOTO -->
+      <!-- GALERIE -->
       <section aria-labelledby="titre-images" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-images">Aperçu en images</h2>
-          <p>L'ambiance, l'élégance et la complicité des prestations live.</p>
+          <h2 id="titre-images">
+            <span data-lang="fr">Aperçu en images</span>
+            <span data-lang="en">Photo gallery</span>
+          </h2>
+          <p>
+            <span data-lang="fr">L'ambiance, l'élégance et la complicité des prestations live.</span>
+            <span data-lang="en">The atmosphere, elegance and energy of live performances.</span>
+          </p>
         </div>
 
         <div class="gallery-grid">
-          <figure class="gallery-item stagger-1" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Cocktail &amp; vin d'honneur">
+          <figure class="gallery-item stagger-1" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Cocktail &amp; vin d'honneur">
             <div class="gallery-zoom-badge" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
             </div>
             <img src="/.netlify/images?url=/pm-2270.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72"
                  data-full-src="/.netlify/images?url=/pm-2270.jpg&amp;w=1400&amp;q=85"
                  srcset="/.netlify/images?url=/pm-2270.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;q=72 400w,
-                         /.netlify/images?url=/pm-2270.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72 640w,
-                         /.netlify/images?url=/pm-2270.jpg&amp;w=900&amp;h=675&amp;fit=cover&amp;q=72 900w,
-                         /.netlify/images?url=/pm-2270.jpg&amp;w=1280&amp;h=960&amp;fit=cover&amp;q=70 1280w"
+                         /.netlify/images?url=/pm-2270.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72 640w"
                  sizes="(min-width: 1140px) 340px, (min-width: 760px) 31vw, 92vw"
                  width="640" height="480" loading="lazy" decoding="async"
-                 alt="Sylvain Sax au saxophone pendant un cocktail de mariage en extérieur">
+                 alt="Sylvain Sax playing saxophone during an outdoor wedding cocktail">
             <figcaption class="gallery-overlay">
-              <span class="gallery-caption">Cocktail &amp; vin d'honneur</span>
-              <span class="gallery-sub">Ambiance chic et lounge en extérieur</span>
+              <span class="gallery-caption">
+                <span data-lang="fr">Cocktail &amp; vin d'honneur</span>
+                <span data-lang="en">Cocktail hour</span>
+              </span>
+              <span class="gallery-sub">
+                <span data-lang="fr">Ambiance chic et lounge en extérieur</span>
+                <span data-lang="en">Chic outdoor lounge atmosphere</span>
+              </span>
             </figcaption>
           </figure>
 
-          <figure class="gallery-item stagger-2" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Duo sax &amp; DJ">
+          <figure class="gallery-item stagger-2" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Duo sax &amp; DJ">
             <div class="gallery-zoom-badge" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
             </div>
             <img src="/.netlify/images?url=/10.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72"
                  data-full-src="/.netlify/images?url=/10.jpg&amp;w=1400&amp;q=85"
                  srcset="/.netlify/images?url=/10.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;q=72 400w,
-                         /.netlify/images?url=/10.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72 640w,
-                         /.netlify/images?url=/10.jpg&amp;w=960&amp;h=720&amp;fit=cover&amp;q=72 960w"
+                         /.netlify/images?url=/10.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;q=72 640w"
                  sizes="(min-width: 1140px) 340px, (min-width: 760px) 31vw, 92vw"
                  width="640" height="480" loading="lazy" decoding="async"
-                 alt="Performance en duo saxophone et DJ sur la piste de danse">
+                 alt="Saxophone and DJ duo performance on the dance floor">
             <figcaption class="gallery-overlay">
               <span class="gallery-caption">Duo sax &amp; DJ</span>
-              <span class="gallery-sub">Toute l'énergie de la piste de danse</span>
+              <span class="gallery-sub">
+                <span data-lang="fr">Toute l'énergie de la piste de danse</span>
+                <span data-lang="en">Full energy on the dance floor</span>
+              </span>
             </figcaption>
           </figure>
 
-          <figure class="gallery-item stagger-3" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Agrandir la photo : Cérémonie laïque &amp; religieuse">
+          <figure class="gallery-item stagger-3" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Ceremony">
             <div class="gallery-zoom-badge" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
             </div>
             <img src="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;position=top&amp;q=72"
                  data-full-src="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=1400&amp;q=85"
                  srcset="/.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=400&amp;h=300&amp;fit=cover&amp;position=top&amp;q=72 400w,
-                         /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;position=top&amp;q=72 640w,
-                         /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=900&amp;h=675&amp;fit=cover&amp;position=top&amp;q=72 900w,
-                         /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=1280&amp;h=960&amp;fit=cover&amp;position=top&amp;q=70 1280w"
+                         /.netlify/images?url=/gardenparty_marlneboutreuxphotography_mariage-938.jpg&amp;w=640&amp;h=480&amp;fit=cover&amp;position=top&amp;q=72 640w"
                  sizes="(min-width: 1140px) 340px, (min-width: 760px) 31vw, 92vw"
                  width="640" height="480" loading="lazy" decoding="async"
-                 alt="Saxophoniste accompagnant une cérémonie de mariage">
+                 alt="Saxophonist accompanying a wedding ceremony">
             <figcaption class="gallery-overlay">
-              <span class="gallery-caption">Cérémonie laïque &amp; religieuse</span>
-              <span class="gallery-sub">Émotion et moments forts sur mesure</span>
+              <span class="gallery-caption">
+                <span data-lang="fr">Cérémonie laïque &amp; religieuse</span>
+                <span data-lang="en">Civil &amp; religious ceremony</span>
+              </span>
+              <span class="gallery-sub">
+                <span data-lang="fr">Émotion et moments forts sur mesure</span>
+                <span data-lang="en">Emotion and bespoke highlights</span>
+              </span>
             </figcaption>
           </figure>
         </div>
       </section>
 
-      <!-- FORMULES -->
+      <!-- FORMULES / PACKAGES -->
       <section id="formules" aria-labelledby="titre-formules" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-formules">Les formules mariage 2027-2028</h2>
-          <p>Des prestations clés en main, sonorisation incluse.</p>
+          <h2 id="titre-formules">
+            <span data-lang="fr">Les formules mariage 2027-2028</span>
+            <span data-lang="en">Wedding packages 2027-2028</span>
+          </h2>
+          <p>
+            <span data-lang="fr">Des prestations clés en main, sonorisation incluse.</span>
+            <span data-lang="en">All-inclusive packages, sound system included.</span>
+          </p>
         </div>
 
         <div class="pricing-grid">
           <article class="pricing-card stagger-1">
-            <h3 class="price-title">Formule cocktail</h3>
-            <p class="price-sub">Animation du vin d'honneur</p>
+            <h3 class="price-title">
+              <span data-lang="fr">Formule cocktail</span>
+              <span data-lang="en">Cocktail package</span>
+            </h3>
+            <p class="price-sub">
+              <span data-lang="fr">Animation du vin d'honneur</span>
+              <span data-lang="en">Cocktail hour entertainment</span>
+            </p>
             <div class="price-amount">
               <span class="price-num">840 €</span>
-              <span class="price-ht">TTC · 700 € HT</span>
+              <span class="price-ht">
+                <span data-lang="fr">TTC · 700 € HT</span>
+                <span data-lang="en">incl. VAT · 700 € excl. VAT</span>
+              </span>
             </div>
-            <p class="price-note">Frais de déplacement en sus, selon le lieu de réception.</p>
+            <p class="price-note">
+              <span data-lang="fr">Frais de déplacement en sus, selon le lieu de réception.</span>
+              <span data-lang="en">Travel costs extra, depending on the venue location.</span>
+            </p>
             <ul class="price-features">
-              <li>Saxophone live pendant tout le cocktail</li>
-              <li>Possibilité de jouer en duo avec le DJ</li>
-              <li>Programmation musicale sur mesure</li>
-              <li>Jusqu'à 5 demandes spécifiques incluses</li>
-              <li>Sonorisation incluse</li>
-              <li>Micro à disposition pour les discours et annonces</li>
+              <li>
+                <span data-lang="fr">Saxophone live pendant tout le cocktail</span>
+                <span data-lang="en">Live saxophone throughout the cocktail hour</span>
+              </li>
+              <li>
+                <span data-lang="fr">Possibilité de jouer en duo avec le DJ</span>
+                <span data-lang="en">Option to perform as a duo with the DJ</span>
+              </li>
+              <li>
+                <span data-lang="fr">Programmation musicale sur mesure</span>
+                <span data-lang="en">Bespoke music programming</span>
+              </li>
+              <li>
+                <span data-lang="fr">Jusqu'à 5 demandes spécifiques incluses</span>
+                <span data-lang="en">Up to 5 personal song requests included</span>
+              </li>
+              <li>
+                <span data-lang="fr">Sonorisation incluse</span>
+                <span data-lang="en">Sound system included</span>
+              </li>
+              <li>
+                <span data-lang="fr">Micro à disposition pour les discours et annonces</span>
+                <span data-lang="en">Microphone available for speeches and announcements</span>
+              </li>
             </ul>
           </article>
 
           <article class="pricing-card featured stagger-2">
-            <span class="popular-tag">Expérience totale</span>
-            <h3 class="price-title">Journée complète</h3>
-            <p class="price-sub">De la cérémonie jusqu'à 1 h du matin</p>
+            <span class="popular-tag">
+              <span data-lang="fr">Expérience totale</span>
+              <span data-lang="en">Full experience</span>
+            </span>
+            <h3 class="price-title">
+              <span data-lang="fr">Journée complète</span>
+              <span data-lang="en">Full day</span>
+            </h3>
+            <p class="price-sub">
+              <span data-lang="fr">De la cérémonie jusqu'à 1 h du matin</span>
+              <span data-lang="en">From ceremony through to 1 am</span>
+            </p>
             <div class="price-amount">
               <span class="price-num">1 680 €</span>
-              <span class="price-ht">TTC · 1 400 € HT</span>
+              <span class="price-ht">
+                <span data-lang="fr">TTC · 1 400 € HT</span>
+                <span data-lang="en">incl. VAT · 1 400 € excl. VAT</span>
+              </span>
             </div>
-            <p class="price-note">Frais de déplacement en sus, selon le lieu de réception.</p>
+            <p class="price-note">
+              <span data-lang="fr">Frais de déplacement en sus, selon le lieu de réception.</span>
+              <span data-lang="en">Travel costs extra, depending on the venue location.</span>
+            </p>
             <ul class="price-features">
-              <li>Réunion de préparation personnalisée en visio</li>
-              <li>Cérémonie : morceaux clés choisis avec vous</li>
-              <li>Cocktail : animation complète, en solo ou en duo avec le DJ, et 5 titres « coup de cœur »</li>
-              <li>Micro à disposition pour les discours et annonces du cocktail</li>
-              <li>Dîner et soirée : entrée en salle, gâteau, ouverture de bal et duo avec le DJ (jusqu'à 1 h)</li>
+              <li>
+                <span data-lang="fr">Réunion de préparation personnalisée en visio</span>
+                <span data-lang="en">Personalised preparation meeting by video call</span>
+              </li>
+              <li>
+                <span data-lang="fr">Cérémonie : morceaux clés choisis avec vous</span>
+                <span data-lang="en">Ceremony: key pieces chosen together</span>
+              </li>
+              <li>
+                <span data-lang="fr">Cocktail : animation complète, en solo ou en duo avec le DJ, et 5 titres « coup de cœur »</span>
+                <span data-lang="en">Cocktail hour: full entertainment, solo or DJ duo, plus 5 personal favourites</span>
+              </li>
+              <li>
+                <span data-lang="fr">Micro à disposition pour les discours et annonces du cocktail</span>
+                <span data-lang="en">Microphone available for cocktail hour speeches and announcements</span>
+              </li>
+              <li>
+                <span data-lang="fr">Dîner et soirée : entrée en salle, gâteau, ouverture de bal et duo avec le DJ (jusqu'à 1 h)</span>
+                <span data-lang="en">Dinner &amp; evening: grand entrance, cake, first dance opening and DJ duo (until 1 am)</span>
+              </li>
             </ul>
           </article>
         </div>
       </section>
 
-      <!-- GARANTIES -->
-      <section class="reassurance-bar reveal-init" aria-label="Garanties">
+      <!-- GARANTIES / GUARANTEES -->
+      <section class="reassurance-bar reveal-init" aria-label="Guarantees">
         <div class="reassurance-item stagger-1">
-          <h3>Sonorisation adaptée</h3>
-          <p>Un matériel dimensionné pour chaque moment de la journée.</p>
+          <h3>
+            <span data-lang="fr">Sonorisation adaptée</span>
+            <span data-lang="en">Tailored sound system</span>
+          </h3>
+          <p>
+            <span data-lang="fr">Un matériel dimensionné pour chaque moment de la journée.</span>
+            <span data-lang="en">Equipment sized for every moment of the day.</span>
+          </p>
         </div>
         <div class="reassurance-item stagger-2">
-          <h3>Synergie avec le DJ</h3>
-          <p>Coordination technique et musicale en amont et sur place.</p>
+          <h3>
+            <span data-lang="fr">Synergie avec le DJ</span>
+            <span data-lang="en">DJ synergy</span>
+          </h3>
+          <p>
+            <span data-lang="fr">Coordination technique et musicale en amont et sur place.</span>
+            <span data-lang="en">Technical and musical coordination in advance and on the day.</span>
+          </p>
         </div>
         <div class="reassurance-item stagger-3">
-          <h3>Assurance RC Pro</h3>
-          <p>Protection du lieu et des invités. Attestation fournie sur demande.</p>
+          <h3>
+            <span data-lang="fr">Assurance RC Pro</span>
+            <span data-lang="en">Professional liability insurance</span>
+          </h3>
+          <p>
+            <span data-lang="fr">Protection du lieu et des invités. Attestation fournie sur demande.</span>
+            <span data-lang="en">Protection for the venue and guests. Certificate provided on request.</span>
+          </p>
         </div>
         <div class="reassurance-item stagger-4">
-          <h3>Expérience</h3>
-          <p>Plus de 80 mariages et 20 ans de pratique.</p>
+          <h3>
+            <span data-lang="fr">Expérience</span>
+            <span data-lang="en">Experience</span>
+          </h3>
+          <p>
+            <span data-lang="fr">Plus de 80 mariages et 20 ans de pratique.</span>
+            <span data-lang="en">Over 80 weddings and 20 years of practice.</span>
+          </p>
         </div>
       </section>
 
-      <!-- AVIS & TÉMOIGNAGES -->
+      <!-- AVIS / REVIEWS -->
       <section aria-labelledby="titre-avis" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-avis">Ils racontent leur mariage</h2>
-          <p>Ce que les mariés retiennent de leur journée.</p>
+          <h2 id="titre-avis">
+            <span data-lang="fr">Ils racontent leur mariage</span>
+            <span data-lang="en">What couples say</span>
+          </h2>
+          <p>
+            <span data-lang="fr">Ce que les mariés retiennent de leur journée.</span>
+            <span data-lang="en">What newlyweds remember from their wedding day.</span>
+          </p>
         </div>
 
         <div class="reviews-grid">
           <blockquote class="review-card stagger-1">
             <div>
-              <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
-              <p class="review-quote">« Nous avons fait appel à Sylvain pour l’animation de notre cocktail. Nous savions que ce serait un beau moment, mais nous étions loin d'imaginer à quel point ! C'était tout simplement incroyable. Sylvain a su mettre tout le monde d'accord et créer une ambiance exceptionnelle du début à la fin. Son talent, son énergie et sa proximité avec les invités ont transformé notre mariage en un véritable moment de partage et de fête. Tout le monde a adoré, et nos invités nous en parlent encore aujourd'hui ! »</p>
+              <div class="review-stars" aria-label="Rating: 5 out of 5">★★★★★</div>
+              <p class="review-quote">
+                <span data-lang="fr">« Nous avons fait appel à Sylvain pour l'animation de notre cocktail. Nous savions que ce serait un beau moment, mais nous étions loin d'imaginer à quel point ! C'était tout simplement incroyable. Sylvain a su mettre tout le monde d'accord et créer une ambiance exceptionnelle du début à la fin. Son talent, son énergie et sa proximité avec les invités ont transformé notre mariage en un véritable moment de partage et de fête. Tout le monde a adoré, et nos invités nous en parlent encore aujourd'hui ! »</span>
+                <span data-lang="en">"We hired Sylvain for our cocktail hour. We knew it would be a lovely moment, but we never imagined how much! It was simply incredible. Sylvain brought everyone together and created an exceptional atmosphere from start to finish. His talent, energy and connection with the guests turned our wedding into a true celebration. Everyone loved it, and our guests still talk about it today!"</span>
+              </p>
             </div>
             <footer class="review-author">
               <span class="author-name">Marie &amp; Florian</span>
-              <span class="review-badge">Cocktail</span>
+              <span class="review-badge">
+                <span data-lang="fr">Cocktail</span>
+                <span data-lang="en">Cocktail hour</span>
+              </span>
             </footer>
           </blockquote>
 
           <blockquote class="review-card stagger-2">
             <div>
-              <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
-              <p class="review-quote">« Par où commencer quand l’animation a été parfaite du début à la fin ? Nous avons fait confiance à Sylvain pour accompagner notre mariage en trois étapes importantes : la cérémonie religieuse, le vin d’honneur et le début de soirée dansante (jusqu’à 1h30 du matin !). S’il y a bien une chose que nos invités ne sont pas prêts d’oublier, c’est la présence de Sylvain ! L’ambiance est LE souvenir qu’ils retiennent de notre mariage. »</p>
+              <div class="review-stars" aria-label="Rating: 5 out of 5">★★★★★</div>
+              <p class="review-quote">
+                <span data-lang="fr">« Par où commencer quand l'animation a été parfaite du début à la fin ? Nous avons fait confiance à Sylvain pour accompagner notre mariage en trois étapes importantes : la cérémonie religieuse, le vin d'honneur et le début de soirée dansante (jusqu'à 1h30 du matin !). S'il y a bien une chose que nos invités ne sont pas prêts d'oublier, c'est la présence de Sylvain ! L'ambiance est LE souvenir qu'ils retiennent de notre mariage. »</span>
+                <span data-lang="en">"Where do you start when the entertainment was perfect from beginning to end? We trusted Sylvain for three key moments: the religious ceremony, the cocktail hour and the opening of the dance party (until 1:30 am!). If there's one thing our guests won't soon forget, it's Sylvain's presence! The atmosphere is THE memory they take away from our wedding."</span>
+              </p>
             </div>
             <footer class="review-author">
               <span class="author-name">Marion Hvt</span>
-              <span class="review-badge">Journée complète</span>
+              <span class="review-badge">
+                <span data-lang="fr">Journée complète</span>
+                <span data-lang="en">Full day</span>
+              </span>
             </footer>
           </blockquote>
 
           <blockquote class="review-card stagger-3">
             <div>
-              <div class="review-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
-              <p class="review-quote">« J’ai découvert Sylvain par hasard avec une publicité Facebook, et il a été un des points les plus forts de notre mariage. Un homme talentueux et sympathique. Nous avons fait notre entrée des mariés à ses côtés, et il a fait danser nos 120 personnes pendant 20 min autour de lui ! Un véritable show combiné à une ambiance de folie ! Merci du fond du coeur Sylvain. Nos invités n’oublieront pas de sitôt ton talent. »</p>
+              <div class="review-stars" aria-label="Rating: 5 out of 5">★★★★★</div>
+              <p class="review-quote">
+                <span data-lang="fr">« J'ai découvert Sylvain par hasard avec une publicité Facebook, et il a été un des points les plus forts de notre mariage. Un homme talentueux et sympathique. Nous avons fait notre entrée des mariés à ses côtés, et il a fait danser nos 120 personnes pendant 20 min autour de lui ! Un véritable show combiné à une ambiance de folie ! Merci du fond du coeur Sylvain. Nos invités n'oublieront pas de sitôt ton talent. »</span>
+                <span data-lang="en">"I discovered Sylvain by chance through a Facebook ad, and he was one of the highlights of our wedding. A talented and warm-hearted man. We made our couple's entrance alongside him, and he had all 120 guests dancing around him for 20 minutes! A real show combined with an incredible atmosphere! Thank you from the bottom of our hearts, Sylvain. Our guests won't soon forget your talent."</span>
+              </p>
             </div>
             <footer class="review-author">
               <span class="author-name">Laëna Plumelet</span>
-              <span class="review-badge">Cocktail</span>
+              <span class="review-badge">
+                <span data-lang="fr">Cocktail</span>
+                <span data-lang="en">Cocktail hour</span>
+              </span>
             </footer>
           </blockquote>
         </div>
       </section>
 
-      <!-- COMMENT RÉSERVER -->
+      <!-- COMMENT RÉSERVER / HOW TO BOOK -->
       <section aria-labelledby="titre-reserver" class="reveal-init">
         <div class="section-header">
-          <h2 id="titre-reserver">Comment réserver</h2>
-          <p>Un accompagnement simple, étape par étape.</p>
+          <h2 id="titre-reserver">
+            <span data-lang="fr">Comment réserver</span>
+            <span data-lang="en">How to book</span>
+          </h2>
+          <p>
+            <span data-lang="fr">Un accompagnement simple, étape par étape.</span>
+            <span data-lang="en">A simple, step-by-step process.</span>
+          </p>
         </div>
 
         <ol class="steps-grid">
           <li class="step-card stagger-1">
-            <div class="step-number">01 · Contact</div>
-            <h3>Premier échange</h3>
-            <p>Par téléphone, Instagram ou e-mail, pour vérifier la disponibilité de votre date.</p>
+            <div class="step-number">
+              <span data-lang="fr">01 · Contact</span>
+              <span data-lang="en">01 · Contact</span>
+            </div>
+            <h3>
+              <span data-lang="fr">Premier échange</span>
+              <span data-lang="en">First conversation</span>
+            </h3>
+            <p>
+              <span data-lang="fr">Par téléphone, Instagram ou e-mail, pour vérifier la disponibilité de votre date.</span>
+              <span data-lang="en">By phone, Instagram or email, to check availability for your date.</span>
+            </p>
           </li>
           <li class="step-card stagger-2">
-            <div class="step-number">02 · Contrat</div>
-            <h3>Réservation</h3>
-            <p>Signature d'un contrat de réservation clair, qui protège chaque partie.</p>
+            <div class="step-number">
+              <span data-lang="fr">02 · Contrat</span>
+              <span data-lang="en">02 · Contract</span>
+            </div>
+            <h3>
+              <span data-lang="fr">Réservation</span>
+              <span data-lang="en">Booking</span>
+            </h3>
+            <p>
+              <span data-lang="fr">Signature d'un contrat de réservation clair, qui protège chaque partie.</span>
+              <span data-lang="en">Signing a clear booking contract that protects both parties.</span>
+            </p>
           </li>
           <li class="step-card stagger-3">
-            <div class="step-number">03 · Préparatifs</div>
-            <h3>Sur mesure</h3>
-            <p>Choix des morceaux clés et calage du déroulé. Le plus tôt sera le mieux.</p>
+            <div class="step-number">
+              <span data-lang="fr">03 · Préparatifs</span>
+              <span data-lang="en">03 · Preparation</span>
+            </div>
+            <h3>
+              <span data-lang="fr">Sur mesure</span>
+              <span data-lang="en">Tailored to you</span>
+            </h3>
+            <p>
+              <span data-lang="fr">Choix des morceaux clés et calage du déroulé. Le plus tôt sera le mieux.</span>
+              <span data-lang="en">Choosing key songs and planning the running order. The sooner, the better.</span>
+            </p>
           </li>
           <li class="step-card stagger-4">
-            <div class="step-number">04 · Le jour J</div>
-            <h3>Profitez</h3>
-            <p>Je m'occupe de toute la logistique musicale. Il ne vous reste qu'à vivre l'instant.</p>
+            <div class="step-number">
+              <span data-lang="fr">04 · Le jour J</span>
+              <span data-lang="en">04 · The big day</span>
+            </div>
+            <h3>
+              <span data-lang="fr">Profitez</span>
+              <span data-lang="en">Enjoy</span>
+            </h3>
+            <p>
+              <span data-lang="fr">Je m'occupe de toute la logistique musicale. Il ne vous reste qu'à vivre l'instant.</span>
+              <span data-lang="en">I handle all the musical logistics. All you need to do is live the moment.</span>
+            </p>
           </li>
         </ol>
       </section>
 
     </main>
 
-    <!-- PIED DE PAGE & CONTACT -->
+    <!-- FOOTER -->
     <footer class="site-footer">
       <p class="footer-name">Sylvain Sax</p>
-      <p class="footer-role">Saxophoniste performeur</p>
+      <p class="footer-role">
+        <span data-lang="fr">Saxophoniste performeur</span>
+        <span data-lang="en">Wedding saxophonist</span>
+      </p>
 
       <div class="contact-links">
-        <a class="btn btn-ghost" href="tel:+33628933995" aria-label="Appeler le 06 28 93 39 95">06 28 93 39 95</a>
-        <a class="btn btn-ghost btn-email" href="mailto:sylvainchazalette@gmail.com" aria-label="Envoyer un e-mail à sylvainchazalette@gmail.com">sylvainchazalette@gmail.com</a>
+        <a class="btn btn-ghost" href="tel:+33628933995" aria-label="Call +33 6 28 93 39 95">06 28 93 39 95</a>
+        <a class="btn btn-ghost btn-email" href="mailto:sylvainchazalette@gmail.com" aria-label="Email sylvainchazalette@gmail.com">sylvainchazalette@gmail.com</a>
       </div>
 
       <div class="social-links">
         <a href="https://www.instagram.com/sylvain_sax/" target="_blank" rel="noopener">Instagram · @sylvain_sax</a>
         <span class="social-sep" aria-hidden="true">·</span>
-        <a href="https://share.google/Izy8KLIvbz9t36eET" target="_blank" rel="noopener">Avis Google · 5,0/5</a>
+        <a href="https://share.google/Izy8KLIvbz9t36eET" target="_blank" rel="noopener">
+          <span data-lang="fr">Avis Google · 5,0/5</span>
+          <span data-lang="en">Google reviews · 5.0/5</span>
+        </a>
       </div>
     </footer>
 
@@ -1171,7 +1435,7 @@
   <div class="lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-hidden="true">
     <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
     <div class="lightbox-content">
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer la vue agrandie">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
       <figure class="lightbox-figure">
@@ -1184,7 +1448,7 @@
     </div>
   </div>
 
-  <button type="button" class="back-to-top" id="backToTop" aria-label="Remonter en haut de la page">
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
@@ -1194,7 +1458,44 @@
     (function () {
       'use strict';
 
-      // 1. Back to top button visibility
+      /* ============================================================
+         LANGUAGE SWITCHER
+         ============================================================ */
+      var currentLang = 'fr';
+
+      function setLang(lang) {
+        currentLang = lang;
+        var body = document.body;
+        var btnFr = document.getElementById('btn-fr');
+        var btnEn = document.getElementById('btn-en');
+
+        if (lang === 'en') {
+          body.classList.add('lang-en');
+          document.documentElement.lang = 'en';
+          if (btnFr) btnFr.classList.remove('active');
+          if (btnEn) btnEn.classList.add('active');
+        } else {
+          body.classList.remove('lang-en');
+          document.documentElement.lang = 'fr';
+          if (btnFr) btnFr.classList.add('active');
+          if (btnEn) btnEn.classList.remove('active');
+        }
+
+        try { localStorage.setItem('sylvain-sax-lang', lang); } catch(e) {}
+      }
+
+      // Make setLang globally accessible (called from onclick attributes)
+      window.setLang = setLang;
+
+      // Restore saved language preference
+      try {
+        var saved = localStorage.getItem('sylvain-sax-lang');
+        if (saved === 'en') setLang('en');
+      } catch(e) {}
+
+      /* ============================================================
+         BACK TO TOP
+         ============================================================ */
       var backToTopBtn = document.getElementById('backToTop');
       var ticking = false;
 
@@ -1220,7 +1521,9 @@
         });
       }
 
-      // 2. Intersection Observer for Scroll Reveals
+      /* ============================================================
+         SCROLL REVEAL
+         ============================================================ */
       var revealElements = document.querySelectorAll('.reveal-init');
       if ('IntersectionObserver' in window) {
         var revealObserver = new IntersectionObserver(function (entries, observer) {
@@ -1230,22 +1533,16 @@
               observer.unobserve(entry.target);
             }
           });
-        }, {
-          threshold: 0.12,
-          rootMargin: '0px 0px -40px 0px'
-        });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-        revealElements.forEach(function (el) {
-          revealObserver.observe(el);
-        });
+        revealElements.forEach(function (el) { revealObserver.observe(el); });
       } else {
-        // Fallback for browsers without IntersectionObserver
-        revealElements.forEach(function (el) {
-          el.classList.add('is-revealed');
-        });
+        revealElements.forEach(function (el) { el.classList.add('is-revealed'); });
       }
 
-      // 3. Accessible Photo Gallery Lightbox
+      /* ============================================================
+         LIGHTBOX
+         ============================================================ */
       var lightbox = document.getElementById('imageLightbox');
       var lightboxImg = document.getElementById('lightboxImg');
       var lightboxTitle = document.getElementById('lightboxTitle');
@@ -1257,24 +1554,29 @@
 
       function openLightbox(item) {
         var img = item.querySelector('img');
-        var title = item.querySelector('.gallery-caption');
-        var sub = item.querySelector('.gallery-sub');
+        var captionEl = item.querySelector('.gallery-caption');
+        var subEl = item.querySelector('.gallery-sub');
         if (!img || !lightbox || !lightboxImg) return;
 
         lastFocusedElement = document.activeElement;
         var fullSrc = img.getAttribute('data-full-src') || img.src;
         lightboxImg.src = fullSrc;
         lightboxImg.alt = img.alt || '';
-        if (lightboxTitle) lightboxTitle.textContent = title ? title.textContent : '';
-        if (lightboxSub) lightboxSub.textContent = sub ? sub.textContent : '';
+
+        // Get visible text from caption (respects current language)
+        if (lightboxTitle && captionEl) {
+          var visibleCaption = captionEl.querySelector('[data-lang="' + currentLang + '"]');
+          lightboxTitle.textContent = visibleCaption ? visibleCaption.textContent : captionEl.textContent;
+        }
+        if (lightboxSub && subEl) {
+          var visibleSub = subEl.querySelector('[data-lang="' + currentLang + '"]');
+          lightboxSub.textContent = visibleSub ? visibleSub.textContent : subEl.textContent;
+        }
 
         lightbox.classList.add('is-open');
         lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
-
-        if (lightboxClose) {
-          lightboxClose.focus();
-        }
+        if (lightboxClose) lightboxClose.focus();
       }
 
       function closeLightbox() {
@@ -1289,14 +1591,9 @@
       }
 
       galleryItems.forEach(function (item) {
-        item.addEventListener('click', function () {
-          openLightbox(item);
-        });
+        item.addEventListener('click', function () { openLightbox(item); });
         item.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openLightbox(item);
-          }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(item); }
         });
       });
 
@@ -1305,14 +1602,10 @@
 
       window.addEventListener('keydown', function (e) {
         if (!lightbox || !lightbox.classList.contains('is-open')) return;
-        if (e.key === 'Escape') {
-          closeLightbox();
-        } else if (e.key === 'Tab' && lightboxClose) {
-          // The close button is the only control in the dialog: keep focus inside
-          e.preventDefault();
-          lightboxClose.focus();
-        }
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'Tab' && lightboxClose) { e.preventDefault(); lightboxClose.focus(); }
       });
+
     })();
   </script>
 </body>
